@@ -1,0 +1,22 @@
+body {
+    padding-top:60px;
+}
+
+a:hover{
+    cursor: pointer
+}
+
+/* hide spinner for inpu type number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.movieResult .caption {
+    margin-left : 220px;
+}
+
+.movieResult img {
+    padding-top: 20px;
+    width: 160px;
+}
