@@ -12,7 +12,7 @@ angularMovieApp.controller("moviesController" ,function ($scope) {
         {
             id: 1,
             title : "Avatar",
-            releaseDate : "2010-09-01",
+            releaseYear : "2010",
             poster : "img/avatar.jpg",
             directors : "James Cameron",
             actors : "Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang, Michelle Rodriguez",
@@ -24,7 +24,7 @@ angularMovieApp.controller("moviesController" ,function ($scope) {
         {
             id: 2,
             title : "Seigneur des Anneaux : La Communauté de l'Anneau",
-            releaseDate : "2003-12-03",
+            releaseYear : "2003",
             poster : "img/seigneurdesanneaux1.jpg",
             directors : "Peter Jackson",
             actors : "Elijah Wood, Sean Astin, Ian McKellen, Sala Baker, Viggo Mortensen",
@@ -36,7 +36,7 @@ angularMovieApp.controller("moviesController" ,function ($scope) {
         {
             id: 3,
             title : "The Grudge",
-            releaseDate : "2004-12-29",
+            releaseYear : "2004",
             poster : "img/thegrudge.jpg",
             directors : "Takashi Shimizu",
             actors : "Sarah Michelle Gellar, Jason Behr, Clea DuVall, Kadee Strickland, Bill Pullman",
@@ -48,7 +48,7 @@ angularMovieApp.controller("moviesController" ,function ($scope) {
         {
             id: 4,
             title : "Yip Man 2",
-            releaseDate : "2010-06-15",
+            releaseYear : "2010",
             poster : "img/yipman.jpg",
             directors : "Wilson Yip",
             actors : "Donnie Yen, Sammo Hung Kam-Bo, Simon Yam, Lynn Hung, Xiaoming Huang",

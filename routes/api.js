@@ -4,7 +4,7 @@ var movies = [
     {
         id: 1,
         title : "Avatar",
-        releaseYear : "2010-09-01",
+        releaseYear : "2010",
         poster : "img/avatar.jpg",
         directors : "James Cameron",
         actors : "Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang, Michelle Rodriguez",
@@ -16,7 +16,7 @@ var movies = [
     {
         id: 2,
         title : "Seigneur des Anneaux : La Communauté de l'Anneau",
-        releaseYear : "2003-12-03",
+        releaseYear : "2003",
         poster : "img/seigneurdesanneaux1.jpg",
         directors : "Peter Jackson",
         actors : "Elijah Wood, Sean Astin, Ian McKellen, Sala Baker, Viggo Mortensen",
@@ -28,7 +28,7 @@ var movies = [
     {
         id: 3,
         title : "The Grudge",
-        releaseYear : "2004-12-29",
+        releaseYear : "2004",
         poster : "img/thegrudge.jpg",
         directors : "Takashi Shimizu",
         actors : "Sarah Michelle Gellar, Jason Behr, Clea DuVall, Kadee Strickland, Bill Pullman",
@@ -40,7 +40,7 @@ var movies = [
     {
         id: 4,
         title : "Yip Man 2",
-        releaseYear : "2010-06-15",
+        releaseYear : "2010",
         poster : "img/yipman.jpg",
         directors : "Wilson Yip",
         actors : "Donnie Yen, Sammo Hung Kam-Bo, Simon Yam, Lynn Hung, Xiaoming Huang",
@@ -50,7 +50,7 @@ var movies = [
     {
         id: 5,
         title : "[REC]",
-        releaseYear : "2008-04-23",
+        releaseYear : "2008",
         poster : "img/rec.jpg",
         directors : "Paco Plaza, Jaume Balagueró",
         actors : "Manuela Velasco, Ferran Terraza, Jorge Yamam, Carlos Lasarte, Pablo Rosso",
@@ -62,7 +62,7 @@ var movies = [
     {
         id: 6,
         title : "Resident Evil",
-        releaseYear : "2002-04-03",
+        releaseYear : "2002",
         poster : "img/residentevil.jpg",
         directors : "Paul W.S. Anderson",
         actors : "Milla Jovovich, Eric Mabius, Michelle Rodriguez, James Purefoy, Liz May Brice",
@@ -74,7 +74,7 @@ var movies = [
     {
         id: 7,
         title : "Seigneur des Anneaux : les deux Tours",
-        releaseYear : "2003-12-10",
+        releaseYear : "2003",
         poster : "img/seigneurdesanneaux2.jpg",
         directors : "Peter Jackson",
         actors : "Elijah Wood, Sean Astin, Ian McKellen, Sala Baker, Viggo Mortensen",
@@ -86,7 +86,7 @@ var movies = [
     {
         id: 8,
         title : "Seigneur des Anneaux : le retour du Roi",
-        releaseYear : "2003-12-17",
+        releaseYear : "2003",
         poster : "img/seigneurdesanneaux3.jpg",
         directors : "Peter Jackson",
         actors : "Elijah Wood, Sean Astin, Ian McKellen, Sala Baker, Viggo Mortensen",
@@ -98,7 +98,7 @@ var movies = [
     {
         id: 9,
         title : "Crazy Kung Fu",
-        releaseYear : "2005-06-08",
+        releaseYear : "2005",
         poster : "img/crazykungfu.jpg",
         directors : "Stephen Chow",
         actors : "Stephen Chow, Wah Yuen, Leung Siu Lung, Dong Zhi Hua, Chiu Chi Ling",
