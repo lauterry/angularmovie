@@ -12,11 +12,11 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 
-.movieResult .caption {
+.thumbnails .caption {
     margin-left : 220px;
 }
 
-.movieResult img {
+.thumbnails  img {
     padding-top: 20px;
     width: 160px;
 }

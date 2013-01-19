@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="angularMovieApp">
 <head>
     <title>AngularMovie</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -22,14 +22,18 @@
 <!-- partie principale -->
 <section class="container">
 
-    <section class="hero-unit">
-        <h1>Bonjour Thierry LAU</h1>
+    <section class="hero-unit" ng-controller="homeController">
+        <h1>Bonjour {{user}}</h1>
         <p>Bienvenue sur AngularMovie, votre cinéthèque développée avec
             <img src="img/angular-logo.png" width="200px" alt="AngularJS">
         </p>
     </section>
 
 </section>
+
+<script type="text/javascript" src="js/lib/angular/angular.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/controllers.js"></script>
 
 </body>
 </html>
