@@ -65,6 +65,7 @@ angularMovieApp.controller("movieFormController" ,function ($scope) {
         var newMovie = {};
         angular.copy(movie, newMovie);
         $scope.movies.push(newMovie);
+        $scope.movie = {};
     };
 
 });
