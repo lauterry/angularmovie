@@ -11,9 +11,9 @@
 <header class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <section class="container">
-            <a class="brand" href="index.html">AngularMovie</a>
+            <a class="brand" href="#/welcome">AngularMovie</a>
             <ul class="nav">
-                <li><a href="movie-list.html">Mes films</a></li>
+                <li><a href="#/movies">Mes films</a></li>
             </ul>
         </section>
     </div>
@@ -21,14 +21,7 @@
 
 <!-- partie principale -->
 <section class="container">
-
-    <section class="hero-unit" ng-controller="homeController">
-        <h1>Bonjour {{user}}</h1>
-        <p>Bienvenue sur AngularMovie, votre cinéthèque développée avec
-            <img src="img/angular-logo.png" width="200px" alt="AngularJS">
-        </p>
-    </section>
-
+    <div ng-view></div>
 </section>
 
 <script type="text/javascript" src="js/lib/angular/angular.min.js"></script>
