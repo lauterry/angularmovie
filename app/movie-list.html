@@ -23,7 +23,9 @@
 <section class="container" ng-controller="moviesController">
 
     <header class="page-header">
-        <h1>Ma vidéothèque <small>4 films</small></h1>
+        <h1>Ma vidéothèque <small>4 films</small>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#movie-form-modal">Ajouter un film</button>
+        </h1>
     </header>
 
     <ul class="thumbnails">
@@ -31,7 +33,7 @@
             <img src="{{movie.poster}}" class="span2">
             <div class="caption">
                 <h3>{{movie.title}}</h3>
-                <p><b>Année de sortie : </b>{{movie.date}}</p>
+                <p><b>Date de sortie : </b>{{movie.releaseYear}}</p>
                 <p><b>Réalisateur : </b>{{movie.directors}}</p>
                 <p><b>Acteurs : </b>{{movie.actors}}</p>
                 <p><b>Synopsis : </b>{{movie.synopsis}}</p>
@@ -39,9 +41,48 @@
         </li>
     </ul>
 
+
+    <!-- formulaire de création - caché par défaut -->
+    <div id="movie-form-modal" class="modal hide fade">
+        <header class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">×</button>
+            <h3>Ajouter un film</h3>
+        </header>
+        <section class="modal-body">
+            <form class="form-horizontal">
+                <div class="control-group">
+                    <label class="control-label">Titre :</label>
+                    <input type="text">
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Année de sortie :</label>
+                    <input type="date">
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Réalisateur : </label>
+                    <input type="text">
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Acteurs :</label>
+                    <input type="text">
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Note :</label>
+                    <input type="number" placeholder="entre 1 et 5">
+                </div>
+            </form>
+        </section>
+        <footer class="modal-footer">
+            <button data-dismiss="modal" class="btn btn-danger btn-small">Annuler</button>
+            <button class="btn btn-success">Ajouter</button>
+        </footer>
+    </div>
+
 </section>
 
+<script type="text/javascript" src="js/lib/jquery/jquery.js"></script>
 <script type="text/javascript" src="js/lib/angular/angular.min.js"></script>
+<script type="text/javascript" src="js/lib/bootstrap/bootstrap.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
 <script type="text/javascript" src="js/controllers.js"></script>
 
