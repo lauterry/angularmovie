@@ -23,6 +23,7 @@ angularMovieApp.controller("movieFormController" ,function ($scope, $http) {
                 var newMovie = {};
                 angular.copy(movie, newMovie);
                 $scope.movies.push(newMovie);
+                $scope.movie = {};
             })
             .error(function(resp){
                 console.log(resp);
