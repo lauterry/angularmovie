@@ -1,9 +1,21 @@
+<!-- header-->
 <header class="page-header">
     <h1>Ma vidéothèque <small>{{movies.length}} films</small>
         <button class="btn btn-primary" data-toggle="modal" data-target="#movie-form-modal">Ajouter un film</button>
     </h1>
 </header>
 
+<!-- barre d'actions -->
+<section class="well form-inline">
+    <input class="span5" type="text" placeholder="Rechercher">
+    <section class="pull-right">
+        <button class="btn btn-info">Trier par année</button>
+        <button class="btn btn-info">Trier par titre</button>
+    </section>
+</section>
+
+
+<!-- liste des films -->
 <ul class="thumbnails">
     <li ng-repeat="movie in movies" class="span12">
         <img src="{{movie.poster}}" class="span2">
