@@ -6,21 +6,21 @@ angularMovieApp.controller("homeController" ,function ($scope) {
 
 });
 
-angularMovieApp.controller("moviesController" ,function ($scope, $http) {
+angularMovieApp.controller("moviesController" ,function ($scope, Movie) {
 
-    $http.get('/server/api/movies').success(function(resp){
+    Movie.fetch().success(function(resp){
         $scope.movies = resp.movies;
     });
 
 });
 
-angularMovieApp.controller("movieFormController" ,function ($scope, $http) {
+angularMovieApp.controller("movieFormController" ,function ($scope, Movie) {
 
     $scope.class = "error";
 
     $scope.addMovie = function(movie){
 
-        $http.post('/server/api/movies', movie)
+        Movie.create(movie)
             .success(function(){
                 var newMovie = {};
                 angular.copy(movie, newMovie);
