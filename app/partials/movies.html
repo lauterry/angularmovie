@@ -7,20 +7,20 @@
 
 <!-- barre d'actions -->
 <section class="well form-inline">
-    <input class="span5" type="text" placeholder="Rechercher">
+    <input class="span5" type="text" ng-model="search" placeholder="Rechercher">
     <section class="pull-right">
-        <button class="btn btn-info">Trier par année</button>
-        <button class="btn btn-info">Trier par titre</button>
+        <button class="btn btn-info" ng-click="tri = 'releaseYear'; reverse = !reverse">Trier par année</button>
+        <button class="btn btn-info" ng-click="tri = 'title'; reverse = !reverse">Trier par titre</button>
     </section>
 </section>
 
 
 <!-- liste des films -->
 <ul class="thumbnails">
-    <li ng-repeat="movie in movies" class="span12">
+    <li ng-repeat="movie in movies | orderBy:tri:reverse | filter : search " class="span12">
         <img src="{{movie.poster}}" class="span2">
         <div class="caption">
-            <h3>{{movie.title}}</h3>
+            <h3>{{movie.title | uppercase}}</h3>
             <p><b>Année de sortie : </b>{{movie.releaseYear}}</p>
             <p><b>Réalisateur : </b>{{movie.directors}}</p>
             <p><b>Acteurs : </b>{{movie.actors}}</p>
