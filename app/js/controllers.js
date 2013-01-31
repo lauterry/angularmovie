@@ -8,6 +8,22 @@ angularMovieApp.controller("homeController" ,function ($scope) {
 
 angularMovieApp.controller("moviesController" ,function ($scope, Movie) {
 
+    // display mode by default
+    $scope.tableView = false;
+    // icon by mode by default
+    $scope.tableViewIcon = 'icon-th icon-white';
+
+    // function called when changing view mode
+    $scope.toogleView = function() {
+        $scope.tableView = !$scope.tableView;
+
+        if($scope.tableView === false){
+            $scope.tableViewIcon = 'icon-th-list icon-white';
+        } else {
+            $scope.tableViewIcon = 'icon-th icon-white';
+        }
+    };
+
     Movie.fetch().success(function(resp){
         $scope.movies = resp.movies;
     });
@@ -15,8 +31,6 @@ angularMovieApp.controller("moviesController" ,function ($scope, Movie) {
 });
 
 angularMovieApp.controller("movieFormController" ,function ($scope, Movie) {
-
-    $scope.class = "error";
 
     $scope.addMovie = function(movie){
 

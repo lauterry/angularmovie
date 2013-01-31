@@ -9,7 +9,7 @@
 <section class="well form-inline">
     <input class="span5" type="text" ng-model="search" placeholder="Rechercher">
     <section class="pull-right">
-        <button class="btn btn-success"><i class="icon-th-list icon-white"></i></button>
+        <button class="btn btn-success" ng-click="toogleView()"><i ng-class="tableViewIcon"></i></button>
         <button class="btn btn-info" ng-click="tri = 'releaseYear'; reverse = !reverse">Trier par année</button>
         <button class="btn btn-info" ng-click="tri = 'title'; reverse = !reverse">Trier par titre</button>
     </section>
@@ -17,7 +17,8 @@
 
 
 <!-- liste des films -->
-<ul class="thumbnails">
+<div ng-switch on="tableView" >
+<ul class="thumbnails" ng-switch-when="false">
     <li ng-repeat="movie in movies | orderBy:tri:reverse | filter : search " class="span12">
         <img src="{{movie.poster | poster}}" class="span2">
         <div class="caption">
@@ -30,6 +31,27 @@
         </div>
     </li>
 </ul>
+<table class="table table-striped" ng-switch-default>
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Titre</th>
+        <th>Réalisateur</th>
+        <th>Année de sortie</th>
+        <th>Note</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="movie in movies | orderBy:tri:reverse | filter : search ">
+        <td>{{$index + 1}}</td>
+        <td>{{movie.title | uppercase}}</td>
+        <td>{{movie.directors}}</td>
+        <td>{{movie.releaseYear}}</td>
+        <td>{{movie.rate | stars}}</td>
+    </tr>
+    </tbody>
+</table>
+</div>
 
 
 <!-- formulaire de création - caché par défaut -->
