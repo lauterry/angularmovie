@@ -117,6 +117,13 @@ exports.fetchMovies = function (req, res) {
 // POST
 exports.addMovie = function (req, res) {
     var movie = req.body;
+
+    for(var idx in movies){
+        if(movies[idx].title === movie.title){
+            res.json(500, { error: 'Le film ' + movie.title + ' a déjà été ajouté.' });
+        }
+    }
+
     movies.push(movie);
     res.json(201);
 };

@@ -33,7 +33,6 @@ angularMovieApp.controller("moviesController" ,function ($scope, Movie) {
 angularMovieApp.controller("movieFormController" ,function ($scope, Movie) {
 
     $scope.addMovie = function(movie){
-
         Movie.create(movie)
             .success(function(){
                 var newMovie = {};
@@ -41,10 +40,14 @@ angularMovieApp.controller("movieFormController" ,function ($scope, Movie) {
                 $scope.movies.push(newMovie);
                 $scope.movie = {};
             })
-            .error(function(resp){
-                console.log(resp);
+            .error(function(resp, statusCode){
+                // Affichage d'un message d'erreur
+                var alert = "<div class='alert alert-danger fade in'>" +
+                                "<button type='button' class='close' data-dismiss='alert'>×</button>" +
+                                "<h4>Erreur " + statusCode + "</h4>" + resp.error +
+                            "</div>";
+                angular.element('.modal-body').prepend(alert);
             });
-
     };
 
 });

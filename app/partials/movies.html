@@ -61,6 +61,7 @@
         <h3>Ajouter un film</h3>
     </header>
     <section class="modal-body">
+
         <form name="movieForm" class="form-horizontal">
             <div class="control-group" ng-class="{error : movieForm.inputTitle.$error.required}">
                 <label class="control-label">Titre :</label>
@@ -96,6 +97,6 @@
     </section>
     <footer class="modal-footer">
         <button data-dismiss="modal" class="btn btn-danger btn-small">Annuler</button>
-        <button data-dismiss="modal" class="btn btn-success" ng-click="addMovie(movie)" ng-disabled="movieForm.$invalid">Ajouter</button>
+        <button class="btn btn-success" ng-click="addMovie(movie)" ng-disabled="movieForm.$invalid">Ajouter</button>
     </footer>
 </div>
