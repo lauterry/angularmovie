@@ -16,7 +16,7 @@ var movies = [
     {
         id: 2,
         title : "Seigneur des Anneaux : La Communauté de l'Anneau",
-        releaseYear : "2003",
+        releaseYear : "2001",
         poster : "img/seigneurdesanneaux1.jpg",
         directors : "Peter Jackson",
         actors : "Elijah Wood, Sean Astin, Ian McKellen, Sala Baker, Viggo Mortensen",
@@ -74,7 +74,7 @@ var movies = [
     {
         id: 7,
         title : "Seigneur des Anneaux : les deux Tours",
-        releaseYear : "2003",
+        releaseYear : "2002",
         poster : "img/seigneurdesanneaux2.jpg",
         directors : "Peter Jackson",
         actors : "Elijah Wood, Sean Astin, Ian McKellen, Sala Baker, Viggo Mortensen",
