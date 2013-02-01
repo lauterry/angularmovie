@@ -57,7 +57,7 @@
 <!-- formulaire de création - caché par défaut -->
 <div id="movie-form-modal" class="modal hide fade" ng-controller="movieFormController">
     <header class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">×</button>
+        <button type="button" class="close" data-dismiss="modal">?</button>
         <h3>Ajouter un film</h3>
     </header>
     <section class="modal-body">
@@ -97,6 +97,6 @@
     </section>
     <footer class="modal-footer">
         <button data-dismiss="modal" class="btn btn-danger btn-small">Annuler</button>
-        <button class="btn btn-success" ng-click="addMovie(movie)" ng-disabled="movieForm.$invalid">Ajouter</button>
+        <button data-dismiss="modal" class="btn btn-success" ng-click="addMovie(movie)" ng-disabled="movieForm.$invalid">Ajouter</button>
     </footer>
 </div>
