@@ -58,7 +58,7 @@
 <div id="movie-form-modal" class="modal hide fade" ng-controller="movieFormController">
     <header class="modal-header">
         <button type="button" class="close" data-dismiss="modal">×</button>
-        <h3>Ajouter un film</h3>
+        <h3>Ajouter un film {{errorTitle}}</h3>
     </header>
     <section class="modal-body">
         <alert-message show="showAlert" title="{{errorTitle}}" message="{{errorMessage}}"></alert-message>
