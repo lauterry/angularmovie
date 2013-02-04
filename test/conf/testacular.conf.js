@@ -3,6 +3,8 @@ basePath = '../../app';
 files = [
     JASMINE,
     JASMINE_ADAPTER,
+    'js/lib/jquery/jquery.js',
+    'js/lib/bootstrap/bootstrap.js',
     'js/lib/angular/angular.min.js',
     '../test/lib/angular-mocks.js',
 
@@ -16,6 +18,8 @@ files = [
 preprocessors = {
     '**/*.html': 'html2js'
 };
+
+logLevel = 'debug';
 
 autoWatch = true;
 
