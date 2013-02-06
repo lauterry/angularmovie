@@ -19,13 +19,13 @@ preprocessors = {
     '**/*.html': 'html2js'
 };
 
-logLevel = 'debug';
-
 autoWatch = true;
 
-browsers = ['Chrome'];
+browsers = ['Chrome', 'Firefox'];
+
+reporters = ['junit', 'progress'];
 
 junitReporter = {
-    outputFile: 'test_out/unit.xml',
+    outputFile: '../report/unit.xml',
     suite: 'unit'
 };
