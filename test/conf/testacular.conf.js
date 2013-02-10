@@ -21,7 +21,9 @@ preprocessors = {
 
 autoWatch = true;
 
-browsers = ['Chrome', 'Firefox'];
+debugLevel = 'error';
+
+browsers = ['Chrome'];
 
 reporters = ['junit', 'progress'];
 

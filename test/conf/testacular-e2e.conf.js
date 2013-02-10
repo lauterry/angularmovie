@@ -3,18 +3,21 @@ basePath = '../../app';
 files = [
   ANGULAR_SCENARIO,
   ANGULAR_SCENARIO_ADAPTER,
-  '../test/e2e/*.js',
-  '../test/lib/angular-mocks.js'
+  '../test/e2e/*.js'
 ];
 
 autoWatch = false;
 
-browsers = ['Chrome', 'Firefox'];
+preprocessors = {
+    '**/*.html': 'html2js'
+};
+
+browsers = ['Chrome'];
 
 singleRun = true;
 
 proxies = {
-  '/': 'http://localhost:3001/'
+    '/': 'http://localhost:3001/'
 };
 
 reporters = ['junit', 'dots'];
