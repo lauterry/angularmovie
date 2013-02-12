@@ -11,7 +11,7 @@ angularMovieApp.controller("moviesController" ,function ($scope, Movie) {
     // display mode by default
     $scope.tableView = false;
     // icon by mode by default
-    $scope.tableViewIcon = 'icon-th icon-white';
+    $scope.tableViewIcon = 'icon-th-list icon-white';
 
     // function called when changing view mode
     $scope.toogleView = function() {
@@ -36,9 +36,7 @@ angularMovieApp.controller("movieFormController" ,function ($scope, Movie) {
 
         Movie.create(movie)
             .success(function(){
-                var newMovie = {};
-                angular.copy(movie, newMovie);
-                $scope.movies.push(newMovie);
+                $scope.movies.push(movie);
                 $scope.movie = {};
             })
             .error(function(resp){
