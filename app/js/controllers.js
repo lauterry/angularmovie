@@ -20,9 +20,7 @@ angularMovieApp.controller("movieFormController" ,function ($scope, $http) {
 
         $http.post('/server/api/movies', movie)
             .success(function(){
-                var newMovie = {};
-                angular.copy(movie, newMovie);
-                $scope.movies.push(newMovie);
+                $scope.movies.push(movie);
                 $scope.movie = {};
             })
             .error(function(resp){
