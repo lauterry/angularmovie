@@ -35,10 +35,9 @@ angularMovieApp.controller("movieFormController" ,function ($scope, Movie) {
     $scope.addMovie = function(movie){
         Movie.create(movie)
             .success(function(){
-                var newMovie = {};
-                angular.copy(movie, newMovie);
-                $scope.movies.push(newMovie);
+                $scope.movies.push(movie);
                 $scope.movie = {};
+                $('#movie-form-modal').modal('hide');
             })
             .error(function(resp, statusCode){
                 // Affichage d'un message d'erreur
