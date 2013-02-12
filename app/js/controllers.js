@@ -22,9 +22,7 @@ angularMovieApp.controller("movieFormController" ,function ($scope, Movie) {
 
         Movie.create(movie)
             .success(function(){
-                var newMovie = {};
-                angular.copy(movie, newMovie);
-                $scope.movies.push(newMovie);
+                $scope.movies.push(movie);
                 $scope.movie = {};
             })
             .error(function(resp){
