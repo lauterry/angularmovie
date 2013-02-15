@@ -2,7 +2,7 @@
 
 var angularMovieApp = angular.module('angularMovieApp', []);
 
-angularMovieApp.config(['$routeProvider', function($routeProvider) {
+angularMovieApp.config(function($routeProvider) {
     $routeProvider
         .when('/home', {
             templateUrl: 'partials/home.html',
@@ -15,4 +15,4 @@ angularMovieApp.config(['$routeProvider', function($routeProvider) {
         .otherwise({
             redirectTo: '/home'
         });
-}]);
+});
