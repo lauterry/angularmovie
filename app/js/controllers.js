@@ -40,16 +40,17 @@ angularMovieApp.controller("moviesController" ,function ($scope, Movie) {
 
 });
 
-angularMovieApp.controller('editMovieController', function($scope, $http, $routeParams, $location){
+
+angularMovieApp.controller('editMovieController', function($scope, Movie, $routeParams, $location){
 
     var movieId = $routeParams.id;
 
-    $http.get('/server/api/movies/' + movieId).success(function(movie){
+    Movie.fetchOne(movieId).success(function(movie){
        $scope.movie = movie;
     });
 
     $scope.updateMovie = function(movie){
-       $http.put('/server/api/movies', movie)
+       Movie.update(movie)
            .success(function(){
                $location.path('/movies');
            })
@@ -75,4 +76,3 @@ angularMovieApp.controller("movieFormController" ,function ($scope, Movie) {
     };
 
 });
-
