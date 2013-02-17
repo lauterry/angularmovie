@@ -33,7 +33,7 @@ angularMovieApp.controller('editMovieController', function($scope, Movie, $route
     });
 
     $scope.updateMovie = function(movie){
-        Movie.update(movie)
+       Movie.update(movie)
            .success(function(){
                $location.path('/movies');
            })
@@ -41,4 +41,20 @@ angularMovieApp.controller('editMovieController', function($scope, Movie, $route
                console.log(resp);
            });
     };
+});
+
+angularMovieApp.controller("movieFormController" ,function ($scope, Movie) {
+
+    $scope.addMovie = function(movie){
+
+        Movie.create(movie)
+            .success(function(){
+                $scope.movies.push(movie);
+                $scope.movie = {};
+            })
+            .error(function(resp){
+                console.log(resp);
+            });
+    };
+
 });
