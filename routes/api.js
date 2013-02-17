@@ -133,7 +133,7 @@ exports.deleteMovie = function (req, res) {
     var id = req.params.id;
 
     for(var i = 0; i < movies.length; i++){
-        if(movies[i].id === id){
+        if(movies[i].id == id){
             movies.splice(i, 1);
             res.json(200);
         }
