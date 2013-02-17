@@ -28,7 +28,7 @@ angularMovieApp.controller('editMovieController', function($scope, Movie, $route
 
     var movieId = $routeParams.id;
 
-    $http.get('/server/api/movies/' + movieId).success(function(movie){
+    Movie.fetchOne(movieId).success(function(movie){
        $scope.movie = movie;
     });
 
