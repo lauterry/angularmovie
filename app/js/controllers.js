@@ -30,26 +30,26 @@ angularMovieApp.controller("moviesController" ,function ($scope, Movie) {
 
 });
 
-angularMovieApp.controller('editMovieController', function($scope, $http, $routeParams, $location){
+angularMovieApp.controller('editMovieController', function($scope, Movie, $routeParams, $location){
 
     var movieId = $routeParams.id;
 
-    $http.get('/server/api/movies/' + movieId).success(function(movie){
-       $scope.movie = movie;
+    Movie.fetchOne(movieId).success(function(movie){
+        $scope.movie = movie;
     });
 
     $scope.updateMovie = function(movie){
-       $http.put('/server/api/movies', movie)
-           .success(function(){
-               $location.path('/movies');
-           })
-           .error(function(resp){
-               console.log(resp);
-           });
+        Movie.update(movie)
+            .success(function(){
+                $location.path('/movies');
+            })
+            .error(function(resp){
+                console.log(resp);
+            });
     };
 });
 
-angularMovieApp.controller("movieFormController" ,function ($scope, Movie) {
+angularMovieApp.controller('editMovieController', function($scope, Movie, $routeParams, $location){
 
     $scope.showAlert = false;
 
@@ -67,7 +67,5 @@ angularMovieApp.controller("movieFormController" ,function ($scope, Movie) {
                 $scope.errorMessage = resp.error;
                 $scope.showAlert = true;
             });
-    };
-
+    }
 });
-
