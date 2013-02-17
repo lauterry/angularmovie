@@ -164,6 +164,23 @@ exports.updateMovie = function(req, res) {
     res.json(304, "Not modified");
 };
 
+
+// PUT
+exports.updateMovie = function(req, res) {
+    var movie = req.body;
+    var id = movie.id;
+
+    for(var i = 0; i < movies.length; i++){
+        if(movies[i].id === id){
+            movies.splice(i, 1);
+            movies.push(movie);
+            res.json(200);
+        }
+    }
+
+    res.json(304, "Not modified");
+};
+
 // DELETE
 exports.deleteMovie = function (req, res) {
     var id = req.params.id;
