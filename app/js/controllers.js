@@ -24,20 +24,21 @@ angularMovieApp.controller("moviesController" ,function ($scope, Movie) {
 
 });
 
-angularMovieApp.controller("movieFormController" ,function ($scope, Movie) {
+angularMovieApp.controller('editMovieController', function($scope, Movie, $routeParams, $location){
 
-    $scope.addMovie = function(movie){
+    var movieId = $routeParams.id;
 
-        Movie.create(movie)
-            .success(function(){
-                $scope.movies.push(movie);
-                $scope.movie = {};
-            })
-            .error(function(resp){
-                console.log(resp);
-            });
+    Movie.fetchOne(movieId).success(function(movie){
+       $scope.movie = movie;
+    });
 
+    $scope.updateMovie = function(movie){
+        Movie.update(movie)
+           .success(function(){
+               $location.path('/movies');
+           })
+           .error(function(resp){
+               console.log(resp);
+           });
     };
-
 });
-

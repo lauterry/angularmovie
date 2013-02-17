@@ -1,0 +1,37 @@
+<header class="page-header">
+    <h1>Modification</small>
+    </h1>
+</header>
+
+<section>
+    <form class="form-horizontal">
+        <div class="control-group">
+            <label class="control-label">Titre :</label>
+            <input type="text" ng-model="movie.title">
+        </div>
+        <div class="control-group">
+            <label class="control-label">Année de sortie :</label>
+            <input type="text" ng-model="movie.releaseYear">
+        </div>
+        <div class="control-group">
+            <label class="control-label">Réalisateur : </label>
+            <input type="text" ng-model="movie.directors">
+        </div>
+        <div class="control-group">
+            <label class="control-label">Acteurs :</label>
+            <input type="text" ng-model="movie.actors">
+        </div>
+        <div class="control-group">
+            <label class="control-label">Synopsis :</label>
+            <textarea ng-model="movie.synopsis"></textarea>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Note :</label>
+            <input type="number" placeholder="entre 1 et 5" ng-model="movie.rate">
+        </div>
+        <footer class="form-actions">
+            <a href="#/movies" class="btn btn-danger btn-small">Annuler</a>
+            <button class="btn btn-success" ng-click="updateMovie(movie)">Ajouter</button>
+        </footer>
+    </form>
+</section>
