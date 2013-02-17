@@ -30,6 +30,25 @@ angularMovieApp.controller("moviesController" ,function ($scope, Movie) {
 
 });
 
+angularMovieApp.controller('editMovieController', function($scope, $http, $routeParams, $location){
+
+    var movieId = $routeParams.id;
+
+    $http.get('/server/api/movies/' + movieId).success(function(movie){
+       $scope.movie = movie;
+    });
+
+    $scope.updateMovie = function(movie){
+       $http.put('/server/api/movies', movie)
+           .success(function(){
+               $location.path('/movies');
+           })
+           .error(function(resp){
+               console.log(resp);
+           });
+    };
+});
+
 angularMovieApp.controller("movieFormController" ,function ($scope, Movie) {
 
     $scope.showAlert = false;
