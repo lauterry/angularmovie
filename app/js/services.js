@@ -15,6 +15,14 @@ angularMovieApp.service("Movie", function ($http) {
 
         remove : function(id) {
             return $http.delete(API_URI + '/' + id);
+        },
+
+        fetchOne : function(id) {
+            return $http.get(API_URI + '/' + id);
+        },
+
+        update : function(movie) {
+             return $http.put('/server/api/movies', movie);
         }
 
     };
