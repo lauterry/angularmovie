@@ -21,7 +21,10 @@
     <li ng-repeat="movie in movies | orderBy:tri:reverse | filter : search " class="span12">
         <img src="{{movie.poster | poster}}" class="span2">
         <div class="caption">
-            <h3>{{movie.title | uppercase}}  <button class="btn btn-danger" ng-click="deleteMovie(movie.id)"><i class="icon-trash icon-white"></i></button></h3>
+            <h3>{{movie.title | uppercase}}
+                <button class="btn btn-danger" ng-click="deleteMovie(movie.id)"><i class="icon-trash icon-white"></i></button>
+                <button class="btn btn-info"><i class="icon-edit icon-white"></i></button>
+            </h3>
             <p><b>Année de sortie : </b>{{movie.releaseYear}}</p>
             <p><b>Réalisateur : </b>{{movie.directors}}</p>
             <p><b>Acteurs : </b>{{movie.actors}}</p>
