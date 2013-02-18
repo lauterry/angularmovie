@@ -57,12 +57,16 @@ angularMovieApp.controller("moviesController" ,function ($scope) {
         }
     ];
 
+    $scope.$on('movie:creation', function(event, movie){
+        $scope.movies.push(movie);
+    });
+
 });
 
 angularMovieApp.controller("movieFormController" ,function ($scope) {
 
     $scope.addMovie = function(movie){
-        $scope.movies.push(movie);
+        $scope.$broadcast('movie:creation', movie);
         $scope.movie = {};
     };
 
