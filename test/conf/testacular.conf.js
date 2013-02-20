@@ -4,6 +4,7 @@ files = [
     JASMINE,
     JASMINE_ADAPTER,
     'js/lib/angular/angular.min.js',
+    'js/lib/angularstrap/angularstrap.js',
     '../test/lib/angular-mocks.js',
 
     'js/*.js',
