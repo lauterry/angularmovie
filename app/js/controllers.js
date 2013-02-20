@@ -40,7 +40,7 @@ angularMovieApp.controller("movieFormController" ,function ($scope, Movie) {
                 $scope.movies.push(movie);
                 $scope.movie = {};
                 $scope.showAlert = false;
-                $('#movie-form-modal').modal('hide');
+                $scope.dismiss();
             })
             .error(function(resp, statusCode){
                 // Affichage d'un message d'erreur
