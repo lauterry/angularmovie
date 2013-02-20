@@ -6,6 +6,7 @@ files = [
     'js/lib/jquery/jquery.js',
     'js/lib/bootstrap/bootstrap.js',
     'js/lib/angular/angular.min.js',
+    'js/lib/angularstrap/angularstrap.js',
     '../test/lib/angular-mocks.js',
 
     'js/*.js',
