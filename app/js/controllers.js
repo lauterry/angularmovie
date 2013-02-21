@@ -13,7 +13,7 @@ angularMovieApp.controller("moviesController" ,function ($scope, Movie) {
     });
 
     $scope.deleteMovie = function(id){
-        $http.delete('/server/api/movies/' + id).success(function(resp){
+        Movie.remove(id).success(function(resp){
             for(var i = 0; i < $scope.movies.length; i++){
                 if($scope.movies[i].id === id){
                     $scope.movies.splice(i, 1);
