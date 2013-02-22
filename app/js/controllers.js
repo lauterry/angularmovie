@@ -49,7 +49,7 @@ angularMovieApp.controller('editMovieController', function($scope, Movie, $route
     };
 });
 
-angularMovieApp.controller('editMovieController', function($scope, Movie, $routeParams, $location){
+angularMovieApp.controller('movieFormController', function($scope, Movie){
 
     $scope.showAlert = false;
 
