@@ -11,8 +11,6 @@ angularMovieApp.service("Movie", function ($http) {
 
         create : function(movie) {
             return  $http.post(API_URI, movie);
-<<<<<<< HEAD
-=======
         },
 
         remove : function(id) {
@@ -25,7 +23,6 @@ angularMovieApp.service("Movie", function ($http) {
 
         update : function(movie) {
              return $http.put('/server/api/movies', movie);
->>>>>>> ff2f135... update and fetchOne service
         }
 
     };
