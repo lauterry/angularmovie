@@ -66,7 +66,7 @@ angularMovieApp.controller("moviesController" ,function ($scope) {
 angularMovieApp.controller("movieFormController" ,function ($scope) {
 
     $scope.addMovie = function(movie){
-        $scope.$broadcast('movie:creation', movie);
+        $scope.$emit('movie:creation', movie);
         $scope.movie = {};
     };
 
