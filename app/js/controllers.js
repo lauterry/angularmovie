@@ -28,6 +28,14 @@ angularMovieApp.controller("moviesController" ,function ($scope, Movie) {
         $scope.movies = resp.movies;
     });
 
+    $scope.deleteMovie = function(index){
+        Movie.remove($scope.movies[index].id)
+            .success(function(resp){
+                $scope.movies.splice(index, 1);
+            }
+        );
+    };
+
 });
 
 angularMovieApp.controller('editMovieController', function($scope, Movie, $routeParams, $location){
