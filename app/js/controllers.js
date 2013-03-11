@@ -12,14 +12,13 @@ angularMovieApp.controller("moviesController" ,function ($scope, Movie) {
         $scope.movies = resp.movies;
     });
 
-    $scope.deleteMovie = function(id){
-        Movie.remove(id).success(function(resp){
-            for(var i = 0; i < $scope.movies.length; i++){
-                if($scope.movies[i].id === id){
-                    $scope.movies.splice(i, 1);
-                }
+
+    $scope.deleteMovie = function(index){
+        Movie.remove($scope.movies[index].id)
+            .success(function(resp){
+                $scope.movies.splice(index, 1);
             }
-        });
+        );
     };
 
 });
