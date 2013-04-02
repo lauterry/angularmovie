@@ -75,5 +75,5 @@ angularMovieApp.controller("movieFormController" ,function ($scope, Movie) {
                 $scope.errorMessage = resp.error;
                 $scope.showAlert = true;
             });
-    }
+    };
 });

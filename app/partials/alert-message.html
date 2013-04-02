@@ -1,5 +1,8 @@
 <div class='alert alert-danger fade in' ng-show="show">
-   <button type='button' class='close' ng-click="show = false;">×</button>
-   <h4>{{title}}</h4>
-   {{message}}
+    <h4>{{title}}</h4>
+    <p>{{message}}</p>
+    <p>
+        <button class="btn btn-danger">Fermer</button>
+        <button class="btn btn-warning">Envoyer les logs et fermer</button>
+    </p>
 </div>
