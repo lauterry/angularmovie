@@ -64,11 +64,10 @@
         <h3>Ajouter un film</h3>
     </header>
     <section class="modal-body">
-        <alert-message show="showAlert" title="{{errorTitle}}" message="{{errorMessage}}"></alert-message>
         <form name="movieForm" class="form-horizontal">
             <div class="control-group" ng-class="{error : movieForm.inputTitle.$error.required}">
                 <label class="control-label">Titre :</label>
-                <editinput type="text" name="inputTitle" ng-model="movie.title" autofocus required>
+                <input type="text" name="inputTitle" ng-model="movie.title" autofocus required>
                 <span class="help-block" ng-show="movieForm.inputTitle.$error.required">Le titre est obligatoire</span>
             </div>
             <div class="control-group" ng-class="{error : movieForm.inputYear.$error.pattern}">
