@@ -8,13 +8,14 @@ angularMovieApp.directive('editable', function(){
 
     return {
         restrict : 'E',
-        transclude : true,
         replace : true,
         template:   '<span>' +
-                        '<label ng-click="edit()" ng-hide="editMode" ng-transclude></label> ' +
-                        '<input type="text" ng-show="editMode" >' +
+                        '<label ng-click="edit()" ng-hide="editMode">{{value}}</label> ' +
+                        '<input type="text" ng-show="editMode" ng-model="value">' +
                     '</span>',
-        scope : {}, // specify an isolate scope for each editable directive
+        scope : {
+            value : "=data"
+        }, // specify an isolate scope for each editable directive
         link : function(scope, element){
 
             // select the needed DOM element from the template
@@ -31,7 +32,6 @@ angularMovieApp.directive('editable', function(){
                 // that the model has changed (here's editMode)
                 scope.$apply(function(){
                     scope.editMode = false;
-                    label.text(input.val());
                 });
 
             });
@@ -39,7 +39,6 @@ angularMovieApp.directive('editable', function(){
             // called when the label is clicked
             scope.edit = function() {
                 scope.editMode = true;
-                input.val(label.text());
             };
 
         }

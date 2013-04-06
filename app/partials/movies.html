@@ -26,10 +26,10 @@
                 <button class="btn btn-danger" ng-click="deleteMovie($index)"><i class="icon-trash icon-white"></i></button>
                 <a class="btn btn-info" href="#/movies/edit/{{movie.id}}"><i class="icon-edit icon-white"></i></a>
             </h3>
-            <p><b>Année de sortie : </b><editable>{{movie.releaseYear}}</editable></p>
-            <p><b>Réalisateur : </b><editable>{{movie.directors}}</editable></p>
-            <p><b>Acteurs : </b><editable>{{movie.actors}}</editable></p>
-            <p><b>Synopsis : </b><editable>{{movie.synopsis}}</editable></p>
+            <p><b>Année de sortie : </b><editable data="movie.releaseYear"></editable></p>
+            <p><b>Réalisateur : </b><editable data="movie.directors"></editable></p>
+            <p><b>Acteurs : </b><editable data="movie.actors"></editable></p>
+            <p><b>Synopsis : </b><editable data="movie.synopsis"></editable></p>
             <p><b>Note : </b>{{movie.rate | stars}}</p>
         </div>
     </li>
