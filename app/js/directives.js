@@ -56,7 +56,7 @@ angularMovieApp.directive('alertMessage', function(){
                         "<p>{{message}}</p>" +
                         "<p>" +
                             "<button class='btn btn-danger'>Fermer</button>" +
-                            "<button class='btn btn-warning'>Envoyer les logs et fermer</button>" +
+                            "<button class='btn btn-warning'>Envoyer les logs</button>" +
                         "</p>" +
                     "</div>",
         //templateUrl : 'partials/alert-message.html',
