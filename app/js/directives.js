@@ -55,8 +55,8 @@ angularMovieApp.directive('alertMessage', function(){
                         "<h4>{{title}}</h4>" +
                         "<p>{{message}}</p>" +
                         "<p>" +
-                            "<button class='btn btn-danger'>Fermer</button>" +
-                            "<button class='btn btn-warning'>Envoyer les logs</button>" +
+                            "<button class='btn btn-danger' ng-click='closeAlert()'>Fermer</button>" +
+                            "<button class='btn btn-warning' ng-click='sendLog()'>Envoyer les logs</button>" +
                         "</p>" +
                     "</div>",
         //templateUrl : 'partials/alert-message.html',
@@ -69,21 +69,18 @@ angularMovieApp.directive('alertMessage', function(){
         },
         link : function(scope, lElement, lAttributes){
 
-            var closeButton =  lElement.find('.btn-danger');
             var logButton = lElement.find('.btn-warning');
 
-            closeButton.bind('click', function(){
-                scope.$apply(function(){
-                    scope.show = false;
-                });
-            });
+            scope.closeAlert = function(){
+                scope.show = false;
+            };
 
-            logButton.bind('click', function(){
-                console.log(lAttributes + lAttributes.message);
+            scope.sendLog = function(){
+                console.log(lAttributes.title + ' : ' + lAttributes.message);
                 logButton.text('Envoyé');
                 logButton.removeClass('btn-warning');
                 logButton.addClass('btn-success');
-            });
+            };
 
         }
     };
