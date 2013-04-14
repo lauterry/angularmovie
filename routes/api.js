@@ -131,15 +131,37 @@ exports.fetchMovie = function (req, res){
 // POST
 exports.addMovie = function (req, res) {
     var movie = req.body;
+    var err = false;
 
     for(var idx in movies){
         if(movies[idx].title === movie.title){
             res.json(500, { error: 'Le film ' + movie.title + ' a déjà été ajouté.' });
+            err = true;
         }
     }
 
-    movies.push(movie);
-    res.json(201);
+    if(!err){
+        movies.push(movie);
+        res.json(201);
+    }
+
+};
+
+
+// PUT
+exports.updateMovie = function(req, res) {
+    var movie = req.body;
+    var id = movie.id;
+
+    for(var i = 0; i < movies.length; i++){
+        if(movies[i].id === id){
+            movies.splice(i, 1);
+            movies.push(movie);
+            res.json(200);
+        }
+    }
+
+    res.json(304, "Not modified");
 };
 
 
