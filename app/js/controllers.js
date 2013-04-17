@@ -70,7 +70,7 @@ angularMovieApp.controller("movieFormController" ,function ($scope, Movie) {
                 // Affichage d'un message d'erreur
                 var alert = "<div class='alert alert-danger fade in'>" +
                                 "<h4>Erreur " + statusCode + "</h4>" + resp.error +
-                                "<button class='btn btn-warning'>Fermer</button>"
+                                "<p><button class='btn btn-danger'>Fermer</button></p>"
                             "</div>";
 
                 $('.modal-body').prepend(alert);
