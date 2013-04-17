@@ -30,6 +30,6 @@ input::-webkit-inner-spin-button {
 }
 
 
-.caption > p > span {
+.caption > div > label {
     display : inline-block;
 }
