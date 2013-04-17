@@ -29,6 +29,6 @@ input::-webkit-inner-spin-button {
     margin-left: 180px;
 }
 
-.caption > p > div {
+.caption > div > label {
     display : inline-block;
 }
