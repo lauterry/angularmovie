@@ -9,10 +9,10 @@ angularMovieApp.directive('editable', function(){
     return {
         restrict : 'E',
         replace : true,
-        template:   '<span>' +
+        template:   '<div>' +
                         '<label ng-click="edit()" ng-hide="editMode">{{value}}</label> ' +
                         '<input type="text" ng-show="editMode" ng-model="value">' +
-                    '</span>',
+                    '</div>',
         scope : {
             value : "=data"
         }, // specify an isolate scope for each editable directive
