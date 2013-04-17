@@ -69,16 +69,23 @@ angularMovieApp.controller("movieFormController" ,function ($scope, Movie) {
             .error(function(resp, statusCode){
                 // Affichage d'un message d'erreur
                 var alert = "<div class='alert alert-danger fade in'>" +
-                                "<button type='button' class='close'>×</button>" +
                                 "<h4>Erreur " + statusCode + "</h4>" + resp.error +
+                                "<button class='btn btn-warning'>Fermer</button>"
                             "</div>";
-                angular.element('.modal-body').prepend(alert);
 
-                var alertElement = angular.element('.alert');
+                $('.modal-body').prepend(alert);
 
-                alertElement.find('button').bind('click', function(){
-                    alertElement.alert('close');
-                })
+                var $alert = $('.alert');
+
+                $alert.find('button').bind('click', function(){
+                    $alert.alert('close');
+                });
+
+                $alert.bind('closed', function(){
+                    $scope.$apply(function(){
+                        $scope.movie = {};
+                    })
+                });
             });
     };
 });
