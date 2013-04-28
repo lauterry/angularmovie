@@ -24,3 +24,7 @@ input::-webkit-inner-spin-button {
 .control-group input {
     margin-left: 20px;
 }
+
+.caption > div > label {
+    display : inline-block;
+}
