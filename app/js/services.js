@@ -22,7 +22,7 @@ angularMovieApp.service("Movie", function ($http) {
         },
 
         update : function(movie) {
-             return $http.put('/server/api/movies', movie);
+             return $http.put(API_URI, movie);
         }
 
     };
