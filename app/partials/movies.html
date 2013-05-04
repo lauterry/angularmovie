@@ -9,7 +9,7 @@
 <section class="well form-inline">
     <input class="span5" type="text" ng-model="search" placeholder="Rechercher">
     <section class="pull-right">
-        <button class="btn btn-success" ng-click="toogleView()"><i ng-class="tableViewIcon"></i></button>
+        <button class="btn btn-success" ng-click="tableView = !tableView"><i ng-class="{'icon-th-list icon-white' : tableView == false , 'icon-th icon-white' : tableView == true }"></i></button>
         <button class="btn btn-info" ng-click="tri = 'releaseYear'; reverse = !reverse">Trier par année</button>
         <button class="btn btn-info" ng-click="tri = 'title'; reverse = !reverse">Trier par titre</button>
     </section>
@@ -17,7 +17,7 @@
 
 
 <!-- liste des films -->
-<div ng-switch on="tableView" >
+<div ng-switch on="tableView" ng-init="tableView = false">
 <ul class="thumbnails" ng-switch-when="false">
     <li ng-repeat="movie in movies | orderBy:tri:reverse | filter : search " class="span12">
         <img src="{{movie.poster | poster}}" class="span2">
