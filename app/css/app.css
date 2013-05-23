@@ -21,10 +21,6 @@ input::-webkit-inner-spin-button {
     width: 160px;
 }
 
-.thumbnails > li {
-    width : 100%;
-}
-
 .control-group input,.control-group textarea  {
     margin-left: 20px;
 }
