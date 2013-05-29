@@ -23,7 +23,7 @@
 <section class="container" ng-controller="moviesController">
 
     <header class="page-header">
-        <h1>Ma vidéothèque <small>{{movies.scope}} films</small>
+        <h1>Ma vidéothèque <small>{{movies.length}} films</small>
             <button class="btn btn-primary" data-toggle="modal" data-target="#movie-form-modal">Ajouter un film</button>
         </h1>
     </header>
@@ -42,48 +42,48 @@
         </li>
     </ul>
 
-    <!-- formulaire de création - caché par défaut -->
-    <div id="movie-form-modal" class="modal hide fade" ng-controller="movieFormController">
-        <header class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">?</button>
-            <h3>Ajouter un film</h3>
-        </header>
-        <section class="modal-body">
-            <form class="form-horizontal">
-                <div class="control-group">
-                    <label class="control-label">Titre :</label>
-                    <input type="text" ng-model="movie.title">
-                </div>
-                <div class="control-group">
-                    <label class="control-label">Année de sortie :</label>
-                    <input type="text" ng-model="movie.releaseYear">
-                </div>
-                <div class="control-group">
-                    <label class="control-label">Réalisateur : </label>
-                    <input type="text" ng-model="movie.directors">
-                </div>
-                <div class="control-group">
-                    <label class="control-label">Acteurs :</label>
-                    <input type="text" ng-model="movie.actors">
-                </div>
-                <div class="control-group">
-                    <label class="control-label">Synopsis :</label>
-                    <textarea ng-model="movie.synopsis"></textarea>
-                </div>
-                <div class="control-group">
-                    <label class="control-label">Note :</label>
-                    <input type="number" placeholder="entre 1 et 5" ng-model="movie.rate">
-                </div>
-            </form>
-        </section>
-        <footer class="modal-footer">
-            <button data-dismiss="modal" class="btn btn-danger btn-small">Annuler</button>
-            <button data-dismiss="modal" class="btn btn-success" ng-click="addMovie(movie)">Ajouter</button>
-        </footer>
-    </div>
-
 </section>
 
+
+<!-- formulaire de création - caché par défaut -->
+<div id="movie-form-modal" class="modal hide fade" ng-controller="movieFormController">
+    <header class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">?</button>
+        <h3>Ajouter un film</h3>
+    </header>
+    <section class="modal-body">
+        <form class="form-horizontal">
+            <div class="control-group">
+                <label class="control-label">Titre :</label>
+                <input type="text" ng-model="movie.title">
+            </div>
+            <div class="control-group">
+                <label class="control-label">Année de sortie :</label>
+                <input type="text" ng-model="movie.releaseYear">
+            </div>
+            <div class="control-group">
+                <label class="control-label">Réalisateur : </label>
+                <input type="text" ng-model="movie.directors">
+            </div>
+            <div class="control-group">
+                <label class="control-label">Acteurs :</label>
+                <input type="text" ng-model="movie.actors">
+            </div>
+            <div class="control-group">
+                <label class="control-label">Synopsis :</label>
+                <textarea ng-model="movie.synopsis"></textarea>
+            </div>
+            <div class="control-group">
+                <label class="control-label">Note :</label>
+                <input type="number" placeholder="entre 1 et 5" ng-model="movie.rate">
+            </div>
+        </form>
+    </section>
+    <footer class="modal-footer">
+        <button data-dismiss="modal" class="btn btn-danger btn-small">Annuler</button>
+        <button data-dismiss="modal" class="btn btn-success" ng-click="addMovie(movie)">Ajouter</button>
+    </footer>
+</div>
 
 <script type="text/javascript" src="js/lib/jquery/jquery.js"></script>
 <script type="text/javascript" src="js/lib/angular/angular.min.js"></script>
