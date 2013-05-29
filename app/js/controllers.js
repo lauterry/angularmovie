@@ -1,6 +1,8 @@
 angularMovieApp.controller("homeController" ,function ($scope) {
-    "use strict";
+    $scope.name = 'Thierry LAU';
 
-    $scope.user = 'Thierry LAU';
+});
 
+angularMovieApp.controller("headerController" ,function ($scope) {
+    $scope.name = 'AngularMovie';
 });

@@ -8,10 +8,10 @@
 <body>
 
 <!-- barre de navigation -->
-<header class="navbar navbar-fixed-top">
+<header class="navbar navbar-fixed-top" ng-controller="headerController">
     <div class="navbar-inner">
         <section class="container">
-            <a class="brand" href="index.html">AngularMovie</a>
+            <a class="brand" href="index.html">{{name}}</a>
             <ul class="nav">
                 <li><a href="movie-list.html">Mes films</a></li>
             </ul>
@@ -20,10 +20,11 @@
 </header>
 
 <!-- partie principale -->
-<section class="container" ng-controller="homeController">
+<section class="container" >
 
-    <section class="hero-unit">
-        <h1>Bonjour {{user}}</h1>
+    <section class="hero-unit" ng-controller="homeController">
+        <h1>Bonjour {{name}}</h1>
+        <input type="text" ng-model="name"/>
         <p>Bienvenue sur AngularMovie, votre cinéthèque développée avec
             <img src="img/angular-logo.png" width="200px" alt="AngularJS">
         </p>
