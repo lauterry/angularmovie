@@ -31,10 +31,10 @@
     </header>
     <section class="modal-body">
         <form name="movieForm" class="form-horizontal">
-            <div class="control-group" ng-class="{error : movieForm.inputTitle.$error.required}">
+            <div class="control-group" ng-class="{error : !movieForm.$pristine && movieForm.inputTitle.$error.required}">
                 <label class="control-label">Titre :</label>
                 <input type="text" name="inputTitle" ng-model="movie.title" required>
-                <span class="help-block" ng-show="movieForm.inputTitle.$error.required">Le titre est obligatoire</span>
+                <span class="help-block" ng-show="!movieForm.$pristine && movieForm.inputTitle.$error.required">Le titre est obligatoire</span>
             </div>
             <div class="control-group" ng-class="{error : movieForm.inputYear.$error.pattern}">
                 <label class="control-label">Année de sortie :</label>
