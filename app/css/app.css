@@ -13,12 +13,12 @@ input::-webkit-inner-spin-button {
 }
 
 .thumbnails .caption {
-    margin-left : 220px;
+    margin-left : 250px;
 }
 
 .thumbnails  img {
     padding-top: 20px;
-    width: 160px;
+    width: 200px;
 }
 
 .control-group input,.control-group textarea  {

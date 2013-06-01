@@ -30,15 +30,17 @@
 
     <ul class="thumbnails">
         <li ng-repeat="movie in movies" class="span12">
-            <img src="{{movie.poster}}" class="span2">
-            <div class="caption">
-                <h3>{{movie.title}}</h3>
-                <p><b>Année de sortie : </b>{{movie.releaseYear}}</p>
-                <p><b>Réalisateur : </b>{{movie.directors}}</p>
-                <p><b>Acteurs : </b>{{movie.actors}}</p>
-                <p><b>Synopsis : </b>{{movie.synopsis}}</p>
-                <p><b>Note : </b>{{movie.rate}}</p>
-            </div>
+          <img src="{{movie.poster}}" class="span2">
+          <div class="caption">
+              <h3>{{movie.title}}</h3>
+              <p><b>Année de sortie : </b>{{movie.releaseYear}}</p>
+              <p><b>Réalisateur : </b>{{movie.directors}}</p>
+              <p><b>Acteurs : </b>{{movie.actors}}</p>
+              <p><b>Synopsis : </b>{{movie.synopsis}}</p>
+              <p><b>Vu le : </b> {{movie.lastViewDate}}</p>
+              <p><b>Prix : </b> {{movie.price}}</p>
+              <p><b>Note : </b> {{movie.rate}}</p>
+          </div>
         </li>
     </ul>
 
