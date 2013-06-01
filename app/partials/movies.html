@@ -30,7 +30,7 @@
             <p><b>Synopsis : </b>{{movie.synopsis}}</p>
             <p><b>Vu le : </b> {{movie.lastViewDate | date:'fullDate'}}</p>
             <p><b>Prix : </b> {{movie.price | currency }}</p>
-            <p><b>Note : </b> {{movie.rate}}</p>
+            <p><b>Note : </b> {{movie.rate | stars}}</p>
         </div>
     </li>
 </ul>
