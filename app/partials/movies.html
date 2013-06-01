@@ -28,8 +28,8 @@
             <p><b>Réalisateur : </b>{{movie.directors}}</p>
             <p><b>Acteurs : </b>{{movie.actors}}</p>
             <p><b>Synopsis : </b>{{movie.synopsis}}</p>
-            <p><b>Vu le : </b> {{movie.lastViewDate}}</p>
-            <p><b>Prix : </b> {{movie.price}}</p>
+            <p><b>Vu le : </b> {{movie.lastViewDate | date:'fullDate'}}</p>
+            <p><b>Prix : </b> {{movie.price | currency }}</p>
             <p><b>Note : </b> {{movie.rate}}</p>
         </div>
     </li>
