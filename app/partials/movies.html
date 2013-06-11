@@ -31,7 +31,7 @@
         <h3>Ajouter un film</h3>
     </header>
     <section class="modal-body">
-        <form name="movieForm" class="form-horizontal">
+        <form novalidate name="movieForm" class="form-horizontal">
             <div class="control-group" ng-class="{error : !movieForm.$pristine && movieForm.inputTitle.$error.required}">
                 <label class="control-label">Titre :</label>
                 <input type="text" name="inputTitle" ng-model="movie.title" required>
