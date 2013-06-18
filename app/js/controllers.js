@@ -84,6 +84,7 @@ angularMovieApp.controller("movieFormController" ,function ($scope, Movie) {
                 $alert.bind('closed', function(){
                     $scope.$apply(function(){
                         $scope.movie = {};
+                        $scope.movieForm.$setPristine();
                     })
                 });
             });
