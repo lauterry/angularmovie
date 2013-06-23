@@ -40,6 +40,7 @@ app.get('/partials/:name', routes.partials);
 // JSON API
 app.get('/server/api/movies', api.fetchMovies);
 app.get('/server/api/movies/:id', api.fetchMovie);
+app.get('/server/api/movies/:id/actors', api.fetchActorsOfMovie);
 app.post('/server/api/movies', api.addMovie);
 app.put('/server/api/movies', api.updateMovie);
 app.delete('/server/api/movies/:id', api.deleteMovie);
