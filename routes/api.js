@@ -137,6 +137,12 @@ var MOVIES = [
 ];
 
 /**
+ * variable to act as a generated id
+ * @type {number}
+ */
+var ID = 9;
+
+/**
  * Fetch all movies
  * If category query is provided, fetch movies filtered by category
  * @param req
@@ -152,7 +158,7 @@ exports.fetchMovies = function (req, res) {
     } else {
         movies = MOVIES;
     }
-    return res.json(200, {movies : movies});
+    return res.json(200, movies);
 
 };
 
@@ -200,14 +206,19 @@ exports.fetchActorsOfMovie = function(req, res){
 exports.addMovie = function (req, res) {
     var movie = req.body;
 
+
     for(var idx in MOVIES){
         if(MOVIES[idx].title === movie.title){
             return res.json(500, { error: 'Le film ' + movie.title + ' a déjà été ajouté.' });
         }
     }
 
+    // increment the id to generate a unique one
+    ID ++;
+    movie.id = ID;
+
     MOVIES.push(movie);
-    return res.json(201);
+    return res.json(201, movie);
 
 };
 
