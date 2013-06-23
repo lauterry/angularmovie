@@ -1,9 +1,10 @@
 "use strict";
 
-var movies = [
+var MOVIES = [
     {
         id: 1,
         title : "Avatar",
+        category : 'Sciences Fictions',
         releaseYear : "2010",
         poster : "img/avatar.jpg",
         directors : "James Cameron",
@@ -18,6 +19,7 @@ var movies = [
     {
         id: 2,
         title : "Seigneur des Anneaux : La Communauté de l'Anneau",
+        category : 'Sciences Fictions',
         releaseYear : "2001",
         poster : "img/seigneurdesanneaux1.jpg",
         directors : "Peter Jackson",
@@ -32,6 +34,7 @@ var movies = [
     {
         id: 3,
         title : "The Grudge",
+        category : 'Horreur',
         releaseYear : "2004",
         poster : "img/thegrudge.jpg",
         directors : "Takashi Shimizu",
@@ -46,6 +49,7 @@ var movies = [
     {
         id: 4,
         title : "Yip Man 2",
+        category : 'Art Martial',
         releaseYear : "2010",
         poster : "img/yipman.jpg",
         directors : "Wilson Yip",
@@ -58,6 +62,7 @@ var movies = [
     {
         id: 5,
         title : "[REC]",
+        category : 'Horreur',
         releaseYear : "2008",
         poster : "img/rec.jpg",
         directors : "Paco Plaza, Jaume Balagueró",
@@ -72,6 +77,7 @@ var movies = [
     {
         id: 6,
         title : "Resident Evil",
+        category : 'Horreur',
         releaseYear : "2002",
         poster : "img/residentevil.jpg",
         directors : "Paul W.S. Anderson",
@@ -86,6 +92,7 @@ var movies = [
     {
         id: 7,
         title : "Seigneur des Anneaux : les deux Tours",
+        category : 'Sciences Fictions',
         releaseYear : "2002",
         poster : "img/seigneurdesanneaux2.jpg",
         directors : "Peter Jackson",
@@ -100,6 +107,7 @@ var movies = [
     {
         id: 8,
         title : "Seigneur des Anneaux : le retour du Roi",
+        category : 'Sciences Fictions',
         releaseYear : "2003",
         poster : "img/seigneurdesanneaux3.jpg",
         directors : "Peter Jackson",
@@ -114,6 +122,7 @@ var movies = [
     {
         id: 9,
         title : "Crazy Kung Fu",
+        category : 'Art Martial',
         releaseYear : "2005",
         poster : "img/crazykungfu.jpg",
         directors : "Stephen Chow",
@@ -127,88 +136,119 @@ var movies = [
     }
 ];
 
-// GET all movies
+/**
+ * Fetch all movies
+ * If category query is provided, fetch movies filtered by category
+ * @param req
+ * @param res
+ * @returns {*}
+ */
 exports.fetchMovies = function (req, res) {
-    res.json(200, {movies : movies});
+    var movies = [];
+    if(req.query.category){
+        movies = MOVIES.filter(function(movie){
+           return movie.category === req.query.category;
+        });
+    } else {
+        movies = MOVIES;
+    }
+    return res.json(200, {movies : movies});
+
 };
 
 
-// GET a movie
+/**
+ * Fetch a movie by id
+ * @param req
+ * @param res
+ * @returns {*}
+ */
 exports.fetchMovie = function (req, res){
     var id = req.params.id;
 
-    for(var i = 0; i < movies.length; i++){
-        if(movies[i].id == id){
-            res.json(200, movies[i]);
+    for(var i = 0; i < MOVIES.length; i++){
+        if(MOVIES[i].id == id){
+            return res.json(200, MOVIES[i]);
         }
     }
 
-    res.json(404, "Not found");
+    return res.json(404);
 };
 
-// POST
+/**
+ * Fetch actors of a movie
+ * @param req
+ * @param res
+ */
+exports.fetchActorsOfMovie = function(req, res){
+    var id = req.params.id;
+
+    for(var i = 0; i < MOVIES.length; i++){
+        if(MOVIES[i].id == id){
+            return res.json(200, MOVIES[i].actors);
+        }
+    }
+    return res.json(404);
+}
+
+/**
+ * Create a movie
+ * @param req
+ * @param res
+ * @returns {*}
+ */
 exports.addMovie = function (req, res) {
     var movie = req.body;
-    var err = false;
 
-    for(var idx in movies){
-        if(movies[idx].title === movie.title){
-            res.json(500, { error: 'Le film ' + movie.title + ' a déjà été ajouté.' });
-            err = true;
+    for(var idx in MOVIES){
+        if(MOVIES[idx].title === movie.title){
+            return res.json(500, { error: 'Le film ' + movie.title + ' a déjà été ajouté.' });
         }
     }
 
-    if(!err){
-        movies.push(movie);
-        res.json(201);
-    }
+    MOVIES.push(movie);
+    return res.json(201);
 
 };
 
 
-// PUT
+/**
+ * Update a movie
+ * @param req
+ * @param res
+ * @returns {*}
+ */
 exports.updateMovie = function(req, res) {
     var movie = req.body;
     var id = movie.id;
 
-    for(var i = 0; i < movies.length; i++){
-        if(movies[i].id === id){
-            movies.splice(i, 1);
-            movies.push(movie);
-            res.json(200);
+    for(var i = 0; i < MOVIES.length; i++){
+        if(MOVIES[i].id === id){
+            MOVIES.splice(i, 1);
+            MOVIES.push(movie);
+            return res.json(200);
         }
     }
 
-    res.json(304, "Not modified");
+    return res.json(304);
 };
 
 
-// PUT
-exports.updateMovie = function(req, res) {
-    var movie = req.body;
-    var id = movie.id;
-
-    for(var i = 0; i < movies.length; i++){
-        if(movies[i].id === id){
-            movies.splice(i, 1);
-            movies.push(movie);
-            res.json(200);
-        }
-    }
-
-    res.json(304, "Not modified");
-};
-
-// DELETE
+/**
+ * Delete a movie
+ * @param req
+ * @param res
+ * @returns {*}
+ */
 exports.deleteMovie = function (req, res) {
     var id = req.params.id;
 
-    for(var i = 0; i < movies.length; i++){
-        if(movies[i].id == id){
-            movies.splice(i, 1);
-            res.json(200);
+    for(var i = 0; i < MOVIES.length; i++){
+        if(MOVIES[i].id == id){
+            MOVIES.splice(i, 1);
+            return res.json(200);
         }
     }
 
-    res.json(304, "Not modified");
+    return res.json(304);
 };
