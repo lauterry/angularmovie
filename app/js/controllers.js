@@ -70,10 +70,7 @@ angularMovieApp.controller('movieFormController', function($scope, Movie){
                 $scope.dismiss();
             })
             .error(function(resp, statusCode){
-                // Affichage d'un message d'erreur
-                $scope.errorTitle = 'Erreur ' + statusCode ;
-                $scope.errorMessage = resp.error;
-                $scope.showAlert = true;
+                console.log('Erreur : ' + resp)
             });
     };
 });
