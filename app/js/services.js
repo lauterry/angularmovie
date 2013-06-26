@@ -8,7 +8,7 @@ angularMovieApp.factory("Movie", function ($resource) {
         {
             update : {method : 'PUT'},
             queryByCategory : {method : 'GET'},
-            getActors : {method: 'GET', subitem : 'actors'}
+            getActors : {method: 'GET', params : {subitem : 'actors'}}
         });
 
     return Movies;
