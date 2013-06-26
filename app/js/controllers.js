@@ -9,7 +9,7 @@ angularMovieApp.controller("homeController" ,function ($scope) {
 angularMovieApp.controller("moviesController" ,function ($scope, $http) {
 
     $http.get('/server/api/movies').success(function(resp){
-        $scope.movies = resp.movies;
+        $scope.movies = resp;
     });
 
 });
