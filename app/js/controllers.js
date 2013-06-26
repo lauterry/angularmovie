@@ -9,7 +9,7 @@ angularMovieApp.controller("homeController" ,function ($scope) {
 angularMovieApp.controller("moviesController" ,function ($scope, Movie) {
 
     Movie.fetch().success(function(resp){
-        $scope.movies = resp.movies;
+        $scope.movies = resp;
     });
 
     $scope.deleteMovie = function(index){
