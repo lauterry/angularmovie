@@ -25,7 +25,7 @@ angularMovieApp.controller("moviesController" ,function ($scope, Movie) {
     };
 
     Movie.fetch().success(function(resp){
-        $scope.movies = resp.movies;
+        $scope.movies = resp;
     });
 
     $scope.deleteMovie = function(index){
@@ -72,5 +72,4 @@ angularMovieApp.controller("movieFormController" ,function ($scope, Movie) {
             });
 
     };
-
 });
