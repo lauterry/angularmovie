@@ -1,4 +1,3 @@
-
 angular.module('angularMovieApp').filter('stars', function () {
     "use strict";
 
@@ -20,6 +19,7 @@ angular.module('angularMovieApp').filter('poster', function () {
     "use strict";
 
     return function(posterUrl) {
+
         if(!posterUrl){
             return "img/no-poster.jpg";
         } else {

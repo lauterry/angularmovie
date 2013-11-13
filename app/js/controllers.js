@@ -1,5 +1,3 @@
-
-
 angular.module('angularMovieApp').controller("homeController" ,function ($scope) {
     "use strict";
     $scope.user = 'Thierry LAU';
@@ -8,16 +6,22 @@ angular.module('angularMovieApp').controller("homeController" ,function ($scope)
 angular.module('angularMovieApp').controller("moviesController" ,function ($scope, Movie) {
     "use strict";
 
-    Movie.fetch().success(function(resp){
-        $scope.movies = resp;
-    });
+    Movie.fetch()
+        .success(function(resp){
+            $scope.movies = resp;
+        })
+        .error(function (resp) {
+            $exceptionHandler(resp);
+        });;
 
     $scope.deleteMovie = function(index){
         Movie.remove($scope.movies[index].id)
             .success(function(resp){
                 $scope.movies.splice(index, 1);
-            }
-        );
+            })
+            .error(function (resp) {
+                $exceptionHandler(resp);
+            });
     };
 
 });
@@ -37,7 +41,7 @@ angular.module('angularMovieApp').controller('editMovieController', function($sc
                 $location.path('/movies');
             })
             .error(function(resp){
-                console.log(resp);
+                $exceptionHandler(resp);
             });
     };
 });
@@ -59,6 +63,7 @@ angular.module('angularMovieApp').controller("movieFormController" ,function ($s
             })
             .error(function(resp, statusCode){
                 // Affichage d'un message d'erreur
+                $exceptionHandler('Erreur ' + statusCode);
                 $scope.errorTitle = 'Erreur ' + statusCode ;
                 $scope.errorMessage = resp.error;
                 $scope.showAlert = true;
