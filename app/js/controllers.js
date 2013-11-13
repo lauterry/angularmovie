@@ -6,24 +6,30 @@ angularMovieApp.controller("homeController" ,function homeController ($scope) {
 
 });
 
-angularMovieApp.controller("moviesController" ,function moviesController ($scope, Movie) {
+angularMovieApp.controller("moviesController" ,function moviesController ($scope, Movie, $exceptionHandler) {
 
-    Movie.fetch().success(function(resp){
-        $scope.movies = resp;
-    });
+    Movie.fetch()
+        .success(function(resp){
+            $scope.movies = resp;
+        })
+        .error(function (resp) {
+            $exceptionHandler(resp);
+        });;
 
 
     $scope.deleteMovie = function(index){
         Movie.remove($scope.movies[index].id)
             .success(function(resp){
                 $scope.movies.splice(index, 1);
-            }
-        );
+            })
+            .error(function (resp) {
+                $exceptionHandler(resp);
+            });
     };
 
 });
 
-angularMovieApp.controller('editMovieController', function editMovieController ($scope, Movie, $routeParams, $location){
+angularMovieApp.controller('editMovieController', function editMovieController ($scope, Movie, $routeParams, $location, $exceptionHandler){
 
     var movieId = $routeParams.id;
 
@@ -37,12 +43,12 @@ angularMovieApp.controller('editMovieController', function editMovieController (
                 $location.path('/movies');
             })
             .error(function(resp){
-                console.log(resp);
+                $exceptionHandler(resp);
             });
     };
 });
 
-angularMovieApp.controller("movieFormController" ,function movieFormController ($scope, Movie) {
+angularMovieApp.controller("movieFormController" ,function movieFormController ($scope, Movie, $exceptionHandler) {
 
     $scope.showAlert = false;
 
@@ -58,6 +64,7 @@ angularMovieApp.controller("movieFormController" ,function movieFormController (
             })
             .error(function(resp, statusCode){
                 // Affichage d'un message d'erreur
+                $exceptionHandler('Erreur ' + statusCode);
                 $scope.errorTitle = 'Erreur ' + statusCode ;
                 $scope.errorMessage = resp.error;
                 $scope.showAlert = true;
