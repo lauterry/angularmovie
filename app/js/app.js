@@ -1,8 +1,8 @@
-"use strict";
+angular.module('angularMovieApp', ['$strap.directives']);
 
-var angularMovieApp = angular.module('angularMovieApp', ['$strap.directives']);
+angular.module('angularMovieApp').config(function($routeProvider) {
+    "use strict";
 
-angularMovieApp.config(function($routeProvider) {
     $routeProvider
         .when('/home', {
             templateUrl: 'partials/home.html',

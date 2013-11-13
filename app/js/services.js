@@ -1,6 +1,4 @@
-"use strict";
-
-angularMovieApp.factory("Movie", function ($http) {
+angular.module('angularMovieApp').factory("Movie", function ($http) {
     var API_URI = '/server/api/movies';
 
     return {

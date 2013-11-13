@@ -1,17 +1,16 @@
-"use strict";
 
-angularMovieApp.controller("homeController" ,function ($scope) {
 
+angular.module('angularMovieApp').controller("homeController" ,function ($scope) {
+    "use strict";
     $scope.user = 'Thierry LAU';
-
 });
 
-angularMovieApp.controller("moviesController" ,function ($scope, Movie) {
+angular.module('angularMovieApp').controller("moviesController" ,function ($scope, Movie) {
+    "use strict";
 
     Movie.fetch().success(function(resp){
         $scope.movies = resp;
     });
-
 
     $scope.deleteMovie = function(index){
         Movie.remove($scope.movies[index].id)
@@ -23,7 +22,8 @@ angularMovieApp.controller("moviesController" ,function ($scope, Movie) {
 
 });
 
-angularMovieApp.controller('editMovieController', function($scope, Movie, $routeParams, $location){
+angular.module('angularMovieApp').controller('editMovieController', function($scope, Movie, $routeParams, $location){
+    "use strict";
 
     var movieId = $routeParams.id;
 
@@ -42,7 +42,8 @@ angularMovieApp.controller('editMovieController', function($scope, Movie, $route
     };
 });
 
-angularMovieApp.controller("movieFormController" ,function ($scope, Movie) {
+angular.module('angularMovieApp').controller("movieFormController" ,function ($scope, Movie) {
+    "use strict";
 
     $scope.showAlert = false;
 

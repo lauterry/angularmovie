@@ -1,10 +1,11 @@
-"use strict";
+
 
 /**
  * inspired by http://www.adobe.com/devnet/html5/articles/angularjs-directives-and-the-computer-science-of-javascript.html
  * by Burke Holland
  */
-angularMovieApp.directive('editable', function(){
+angular.module('angularMovieApp').directive('editable', function(){
+    "use strict";
 
     return {
         restrict : 'E',
@@ -39,11 +40,11 @@ angularMovieApp.directive('editable', function(){
             });
 
         }
-    }
+    };
 
 });
 
-angularMovieApp.directive('alertMessage', function(){
+angular.module('angularMovieApp').directive('alertMessage', function(){
     return {
         template : "<div class='alert alert-danger fade in' ng-show='show'>" +
             "<h4>{{title}}</h4>" +
