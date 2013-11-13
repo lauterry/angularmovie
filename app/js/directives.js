@@ -43,7 +43,7 @@ angularMovieApp.directive('editable', function editableDirective (){
 
 });
 
-angularMovieApp.directive('alertMessage', function(){
+angularMovieApp.directive('alertMessage', function alertMessageDirective (){
     return {
         template : "<div class='alert alert-danger fade in' ng-show='show'>" +
             "<h4>{{title}}</h4>" +

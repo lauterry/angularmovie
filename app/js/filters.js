@@ -16,7 +16,7 @@ angularMovieApp.filter('stars', function starsFilter () {
 });
 
 
-angularMovieApp.filter('poster', function () {
+angularMovieApp.filter('poster', function posterFilter () {
     return function(posterUrl) {
 
         if(!posterUrl){
