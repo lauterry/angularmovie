@@ -1,6 +1,6 @@
 "use strict";
 
-angularMovieApp.filter('stars', function () {
+angularMovieApp.filter('stars', function starsFilter () {
 
     var STARS = {
         1: '\u2605',
@@ -18,6 +18,7 @@ angularMovieApp.filter('stars', function () {
 
 angularMovieApp.filter('poster', function () {
     return function(posterUrl) {
+
         if(!posterUrl){
             return "img/no-poster.jpg";
         } else {
