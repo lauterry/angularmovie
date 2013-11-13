@@ -6,7 +6,7 @@ angularMovieApp.factory("Movie", function MovieService ($http) {
     return {
 
         fetch : function() {
-            return $http.get(API_URI);
+            return $http.get(API_URI, {cache : true});
         },
 
         create : function(movie) {
@@ -18,7 +18,7 @@ angularMovieApp.factory("Movie", function MovieService ($http) {
         },
 
         fetchOne : function(id) {
-            return $http.get(API_URI + '/' + id);
+            return $http.get(API_URI + '/' + id, {cache : true});
         },
 
         update : function(movie) {
