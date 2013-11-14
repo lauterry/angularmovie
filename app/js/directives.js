@@ -1,5 +1,3 @@
-
-
 /**
  * inspired by http://www.adobe.com/devnet/html5/articles/angularjs-directives-and-the-computer-science-of-javascript.html
  * by Burke Holland
@@ -45,6 +43,8 @@ angular.module('angularMovieApp').directive('editable', function(){
 });
 
 angular.module('angularMovieApp').directive('alertMessage', function(){
+    "use strict";
+
     return {
         template : "<div class='alert alert-danger fade in' ng-show='show'>" +
             "<h4>{{title}}</h4>" +

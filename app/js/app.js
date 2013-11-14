@@ -1,16 +1,16 @@
-angular.module('angularMovieApp', ['$strap.directives']);
+angular.module('angularMovieApp', ['ngRoute', '$strap.directives']);
 
-angular.module('angularMovieApp').config(function($routeProvider) {
+angular.module('angularMovieApp').config(function ($routeProvider) {
     "use strict";
 
     $routeProvider
         .when('/home', {
             templateUrl: 'partials/home.html',
-            controller : 'homeController'
+            controller: 'homeController'
         })
         .when('/movies', {
             templateUrl: 'partials/movies.html',
-            controller : 'moviesController'
+            controller: 'moviesController'
         })
         .when('/movies/edit/:id', {
             templateUrl: 'partials/edit.html',

@@ -3,7 +3,7 @@ angular.module('angularMovieApp').controller("homeController" ,function ($scope)
     $scope.user = 'Thierry LAU';
 });
 
-angular.module('angularMovieApp').controller("moviesController" ,function ($scope, Movie) {
+angular.module('angularMovieApp').controller("moviesController" ,function ($scope, Movie, $exceptionHandler) {
     "use strict";
 
     Movie.fetch()
@@ -12,11 +12,11 @@ angular.module('angularMovieApp').controller("moviesController" ,function ($scop
         })
         .error(function (resp) {
             $exceptionHandler(resp);
-        });;
+        });
 
     $scope.deleteMovie = function(index){
         Movie.remove($scope.movies[index].id)
-            .success(function(resp){
+            .success(function(){
                 $scope.movies.splice(index, 1);
             })
             .error(function (resp) {
@@ -26,7 +26,7 @@ angular.module('angularMovieApp').controller("moviesController" ,function ($scop
 
 });
 
-angular.module('angularMovieApp').controller('editMovieController', function($scope, Movie, $routeParams, $location){
+angular.module('angularMovieApp').controller('editMovieController', function($scope, Movie, $routeParams, $location, $exceptionHandler){
     "use strict";
 
     var movieId = $routeParams.id;
@@ -46,7 +46,7 @@ angular.module('angularMovieApp').controller('editMovieController', function($sc
     };
 });
 
-angular.module('angularMovieApp').controller("movieFormController" ,function ($scope, Movie) {
+angular.module('angularMovieApp').controller("movieFormController" ,function ($scope, Movie, $exceptionHandler) {
     "use strict";
 
     $scope.showAlert = false;
