@@ -10,5 +10,6 @@
     "unused": true,
     "strict" : true,
     "trailing" : true,
-    "globals": { "angular": false }
+    "globals": { "angular": false,
+                 "module": false}
 }
