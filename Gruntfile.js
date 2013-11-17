@@ -44,6 +44,16 @@ module.exports = function(grunt) {
                 jshintrc: '.jshintrc'
             },
             all : ['<%= assetsDir %>/js']
+        },
+        rev: {
+            dist: {
+                files: {
+                    src: [
+                        '<%= distDir %>/js/{,*/}*.js',
+                        '<%= distDir %>/css/{,*/}*.css'
+                    ]
+                }
+            }
         }
     });
 
@@ -53,9 +63,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-rev');
     grunt.loadNpmTasks('grunt-ngmin');
     grunt.loadNpmTasks('grunt-usemin');
 
-    grunt.registerTask('default', ['jshint', 'clean', 'useminPrepare', 'copy', 'concat', 'ngmin', 'uglify', 'cssmin', 'usemin' ]);
+    grunt.registerTask('default', ['jshint', 'clean', 'useminPrepare', 'copy', 'concat', 'ngmin', 'uglify', 'cssmin', 'rev', 'usemin' ]);
 
 };

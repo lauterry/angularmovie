@@ -72,7 +72,6 @@ angular.module('angularMovieApp').directive('alertMessage', function($exceptionH
 
             scope.sendLog = function(){
                 $exceptionHandler(lAttributes.title + ' : ' + lAttributes.message);
-                console.log("hekllo");
                 logButton.text('Envoyé');
                 logButton.removeClass('btn-warning');
                 logButton.addClass('btn-success');
