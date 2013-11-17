@@ -42,7 +42,7 @@ angular.module('angularMovieApp').directive('editable', function(){
 
 });
 
-angular.module('angularMovieApp').directive('alertMessage', function(){
+angular.module('angularMovieApp').directive('alertMessage', function($exceptionHandler){
     "use strict";
 
     return {
@@ -71,7 +71,8 @@ angular.module('angularMovieApp').directive('alertMessage', function(){
             };
 
             scope.sendLog = function(){
-                console.log(lAttributes.title + ' : ' + lAttributes.message);
+                $exceptionHandler(lAttributes.title + ' : ' + lAttributes.message);
+                console.log("hekllo");
                 logButton.text('Envoyé');
                 logButton.removeClass('btn-warning');
                 logButton.addClass('btn-success');

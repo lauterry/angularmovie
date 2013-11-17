@@ -1,14 +1,26 @@
 module.exports = function(grunt) {
 
     grunt.initConfig({
+
+        assetsDir: 'app',
+        distDir: 'dist',
+
         clean: {
-            dist: ['.tmp', 'dist']
+            dist: ['.tmp', '<%= distDir %>']
         },
         copy: {
             dist: {
-                files: {
-                    'dist/': ['app/index.html', 'app/img/**', 'app/css/**']
-                }
+                files: [{
+                    expand: true,
+                    dot: true,
+                    cwd: '<%= assetsDir %>',
+                    dest: '<%= distDir %>/',
+                    src: [
+                        'index.html',
+                        'img/**',
+                        'partials/**'
+                    ]
+                }]
             }
         },
         ngmin: {
@@ -22,20 +34,28 @@ module.exports = function(grunt) {
             }
         },
         useminPrepare: {
-            html: 'app/index.html'
+            html: '<%= assetsDir %>/index.html'
         },
         usemin: {
-            html: 'dist/app/index.html'
+            html: '<%= distDir %>/index.html'
+        },
+        jshint: {
+            options: {
+                jshintrc: '.jshintrc'
+            },
+            all : ['<%= assetsDir %>/js']
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-ngmin');
     grunt.loadNpmTasks('grunt-usemin');
 
-    grunt.registerTask('default', ['clean', 'copy', 'useminPrepare', 'concat', 'ngmin', 'uglify', 'usemin' ]);
+    grunt.registerTask('default', ['jshint', 'clean', 'useminPrepare', 'copy', 'concat', 'ngmin', 'uglify', 'cssmin', 'usemin' ]);
 
 };
