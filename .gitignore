@@ -4,3 +4,5 @@ AngularMovie.iml
 node_modules/
 test/report/
 angularmovie.iml
+.tmp/
+dist/
