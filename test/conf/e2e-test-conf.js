@@ -15,6 +15,6 @@ module.exports = function (config) {
         colors: true,
         logLevel: config.LOG_INFO,
         reporters: ['progress'],
-        browsers: ['Chrome']
+        browsers: ['Chrome', 'Firefox']
     });
 };

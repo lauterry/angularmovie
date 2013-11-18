@@ -66,7 +66,7 @@ module.exports = function (config) {
             // - Safari (only Mac; has to be installed with `npm install karma-safari-launcher`)
             // - PhantomJS
             // - IE (only Windows; has to be installed with `npm install karma-ie-launcher`)
-            browsers: ['Chrome'],
+            browsers: ['Chrome', 'Firefox'],
 
 
             // If browser does not capture in given timeout [ms], kill it
@@ -79,7 +79,8 @@ module.exports = function (config) {
             plugins: [
                 'karma-jasmine',
                 'karma-ng-html2js-preprocessor',
-                'karma-chrome-launcher'
+                'karma-chrome-launcher',
+                'karma-firefox-launcher'
             ],
 
 
