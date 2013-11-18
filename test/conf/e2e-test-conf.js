@@ -1,31 +1,20 @@
-basePath = '../../app';
+// Karma configuration
+// Generated on Thu Nov 14 2013 01:22:18 GMT+0100 (CET)
 
-files = [
-  ANGULAR_SCENARIO,
-  ANGULAR_SCENARIO_ADAPTER,
-  '../test/e2e/*.js'
-];
+module.exports = function (config) {
 
-autoWatch = false;
-
-preprocessors = {
-    '**/*.html': 'html2js'
+    config.set({
+        frameworks: ['ng-scenario'],
+        files: ['../e2e/**/*.js'],
+        urlRoot: '/_karma_/',
+        proxies: {
+            '/': 'http://localhost:3001/'
+        },
+        autoWatch: false,
+        singleRun: true,
+        colors: true,
+        logLevel: config.LOG_INFO,
+        reporters: ['progress'],
+        browsers: ['Chrome']
+    });
 };
-
-browsers = ['Chrome'];
-
-singleRun = true;
-
-proxies = {
-    '/': 'http://localhost:3001/'
-};
-
-reporters = ['junit', 'dots'];
-
-junitReporter = {
-  outputFile: '../report/e2e.xml',
-  suite: 'e2e'
-};
-
-port = 9877;
-runnerPort = 9101;

@@ -59,7 +59,6 @@ angular.module('angularMovieApp').controller("movieFormController" ,function ($s
                 $scope.movies.push(newMovie);
                 $scope.movie = {};
                 $scope.showAlert = false;
-                $scope.dismiss();
             })
             .error(function(resp, statusCode){
                 // Affichage d'un message d'erreur

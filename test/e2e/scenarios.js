@@ -1,16 +1,23 @@
-'use strict';
-
 describe('angularMovieApp', function () {
 
     describe('static routes', function () {
 
+        beforeEach(function() {
+            browser().navigateTo('/');
+        });
+
+        it('should jump to the /home path when / is accessed', function() {
+            browser().navigateTo('#/');
+            expect(browser().location().path()).toBe("/home");
+        });
+
         it('should navigate to home', function () {
-            browser().navigateTo('/index.html#/home');
+            browser().navigateTo('#/home');
             expect(element('[ng-view]').text()).toContain('Bienvenue sur AngularMovie');
         });
 
         it('should navigate to how it works', function () {
-            browser().navigateTo('/index.html#/movies');
+            browser().navigateTo('#/movies');
             expect(element('[ng-view]').text()).toContain('Ma vidéothèque');
         });
 
@@ -19,7 +26,7 @@ describe('angularMovieApp', function () {
     describe('Movie list view', function () {
 
         beforeEach(function() {
-            browser().navigateTo('/index.html#/movies');
+            browser().navigateTo('#/movies');
             input('search').enter('');
         });
 
@@ -47,13 +54,13 @@ describe('angularMovieApp', function () {
         it('should be able to sort by movie title', function() {
             element('#orderTitleButton').click();
             var movieElements = repeater('.thumbnails > li', 'Movie list');
-            expect(movieElements.column('movie.title')).toEqual(["Yip Man 2","The Grudge",
-                "Seigneur des Anneaux : les deux Tours","Seigneur des Anneaux : le retour du Roi",
-                "Seigneur des Anneaux : La Communauté de l'Anneau","Resident Evil","Crazy Kung Fu","Avatar","[REC]"]);
-            lement('#orderTitleButton').click();
-            expect(movieElements.column('movie.title')).toEqual(["[REC]","Avatar","Crazy Kung Fu","Resident Evil",
-                "Seigneur des Anneaux : La Communauté de l'Anneau","Seigneur des Anneaux : le retour du Roi",
-                "Seigneur des Anneaux : les deux Tours","The Grudge","Yip Man 2"]);
+            expect(movieElements.column('movie.title')).toEqual(["YIP MAN 2","THE GRUDGE",
+                "SEIGNEUR DES ANNEAUX : LES DEUX TOURS","SEIGNEUR DES ANNEAUX : LE RETOUR DU ROI",
+                "SEIGNEUR DES ANNEAUX : LA COMMUNAUTÉ DE L'ANNEAU","RESIDENT EVIL","CRAZY KUNG FU","AVATAR","[REC]"]);
+            element('#orderTitleButton').click();
+            expect(movieElements.column('movie.title')).toEqual(["[REC]","AVATAR","CRAZY KUNG FU","RESIDENT EVIL",
+                "SEIGNEUR DES ANNEAUX : LA COMMUNAUTÉ DE L'ANNEAU","SEIGNEUR DES ANNEAUX : LE RETOUR DU ROI",
+                "SEIGNEUR DES ANNEAUX : LES DEUX TOURS","THE GRUDGE","YIP MAN 2"]);
         });
 
 

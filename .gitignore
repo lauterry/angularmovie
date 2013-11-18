@@ -7,3 +7,4 @@ angularmovie.iml
 .tmp/
 dist/
 bower_components/
+app/vendor/
