@@ -3,7 +3,8 @@ AngularMovie
 
 Librairie de films développé avec AngularJS. 
 
-Cette application sert de support pour [http://lauterry.github.io/slides-prez-angular/](Slides de présentation Live Coding)
+Cette application sert de support pour [Slides de présentation Live Coding](http://lauterry.github.io/slides-prez-angular/)
+
 
 ## Pré-requis
 * Installer Node.JS. AngularJS ne nécessite pas Node.JS mais j'ai utilisé Node pour mon back end et pour servir les fichiers statiques.
