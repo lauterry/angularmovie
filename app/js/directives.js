@@ -27,6 +27,17 @@ angularMovieApp.directive('editable', function(){
 
             // find the input elemnt of this directive ...
             var input = element.find('input');
+
+			scope.enterEditMode = function() {
+				scope.editMode = true;
+			};
+
+			scope.$watch('editMode', function(newValue) {
+				if(newValue) {
+					input.focus();
+				}
+			});
+
             // and listen for blur event
             input.bind('blur', function(){
                 // since blur event occured ouside the angular execution context

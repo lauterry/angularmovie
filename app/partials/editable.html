@@ -1,5 +1,5 @@
 <div>
     <label><b>{{label}} : </b></label>
-    <span ng-hide="editMode" ng-click="editMode = true">{{text}}</span>
+    <span ng-hide="editMode" ng-click="enterEditMode()">{{text}}</span>
     <input ng-show="editMode" type="text" ng-model="text"/>
 </div>
