@@ -61,6 +61,22 @@ angularMovieApp.controller("moviesController" ,function ($scope) {
         $scope.movies.push(movie);
     });
 
+
+    $scope.$watch('movies',function(oldLength,newLength){
+        var length=$scope.movies.length;
+        switch (length){
+            case 0:
+                $scope.label="Pas de film";
+                break;
+            case 1:
+                $scope.label="1 film"
+                break;
+            default :
+                $scope.label= length+ " films"
+                break;
+        }
+    },true)
+
 });
 
 angularMovieApp.controller("movieFormController" ,function ($scope, $rootScope) {
