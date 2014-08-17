@@ -69,10 +69,10 @@ angularMovieApp.controller("moviesController" ,function ($scope) {
                 $scope.label="Pas de film";
                 break;
             case 1:
-                $scope.label="1 film"
+                $scope.label="1 film";
                 break;
             default :
-                $scope.label= length+ " films"
+                $scope.label= length+ " films";
                 break;
         }
     },true)
