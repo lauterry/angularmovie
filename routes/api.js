@@ -235,8 +235,7 @@ exports.updateMovie = function(req, res) {
 
     for(var i = 0; i < MOVIES.length; i++){
         if(MOVIES[i].id === id){
-            MOVIES.splice(i, 1);
-            MOVIES.push(movie);
+			MOVIES.splice(i, 1, movie);
             return res.json(200);
         }
     }
