@@ -15,7 +15,6 @@
     "angular-i18n": "~1.2.1",
     "angular-strap": "0.6.6",
     "bootstrap.css": "~2.3.2",
-    "bootstrap.zip": "http://bootstrapdocs.com/v2.1.1/docs/assets/bootstrap.zip",
     "angular-route": "~1.2.1",
     "angular-mocks": "~1.2.1"
   },
