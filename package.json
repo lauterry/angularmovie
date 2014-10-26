@@ -22,5 +22,12 @@
     "serve-static": "^1.6.4",
     "path": "*",
     "lodash": "^2.4.1"
+  },
+  "devDependencies": {
+    "karma": "^0.12.24",
+    "karma-chrome-launcher": "^0.1.5",
+    "karma-jasmine": "^0.1.5",
+    "mocha": "^2.0.1",
+    "karma-cli": "0.0.4"
   }
 }

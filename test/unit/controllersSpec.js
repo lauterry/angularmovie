@@ -57,7 +57,7 @@ describe("AngularMovie application", function() {
     // Loads the controllers
     beforeEach(inject(function($controller, $rootScope, $httpBackend) {
         scope =  $rootScope;
-        $httpBackend.whenGET('/server/api/movies').respond({movies : MOVIES});
+        $httpBackend.whenGET('/server/api/movies').respond(MOVIES);
         $controller('moviesController', {$scope: scope});
         $httpBackend.flush();
 
@@ -66,7 +66,7 @@ describe("AngularMovie application", function() {
     }));
 
 
-    it("should loads movies on start", function($httpBackend) {
+    it("should loads movies on start", function() {
         expect(scope.movies).toBeTruthy();
         expect(scope.movies.length > 0).toBeTruthy();
     });
@@ -88,7 +88,7 @@ describe("AngularMovie application", function() {
             rate : 2,
             synopsis : "blablabla"
 
-        }
+        };
         anotherScope.addMovie(movie);
 
         $httpBackend.flush();

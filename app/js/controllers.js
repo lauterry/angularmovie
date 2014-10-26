@@ -62,14 +62,6 @@ angularMovieApp.controller("movieFormController" ,function ($scope, Movie) {
                 angular.copy(movie, newMovie);
                 $scope.movies.push(newMovie);
                 $scope.movie = {};
-                $scope.showAlert = false;
-                $scope.dismiss();
             })
-            .error(function(resp, statusCode){
-                // Affichage d'un message d'erreur
-                $scope.errorTitle = 'Erreur ' + statusCode ;
-                $scope.errorMessage = resp.error;
-                $scope.showAlert = true;
-            });
     };
 });
