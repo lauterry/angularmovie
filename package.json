@@ -1,14 +1,26 @@
 {
-    "name": "AngularMovie",
-    "version": "0.0.1",
-    "private": true,
-    "engines": {
-        "node": "0.8.x",
-        "npm":  "1.1.x"
-    },
-    "dependencies": {
-        "express": "3.x",
-        "path": "*",
-        "ejs": "*"
-    }
+  "name": "AngularMovie",
+  "version": "1.0.0",
+  "description": "Live Coding & Hands On AngularJS",
+  "author": "Thierry LAU <thierlau@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lauterry/angularmovie/"
+  },
+  "bugs": {
+    "url": "https://github.com/lauterry/angularmovie/issues"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "colors": "^1.0.3",
+    "body-parser": "^1.9.0",
+    "express": "^4.9.7",
+    "serve-static": "^1.6.4",
+    "path": "*",
+    "lodash": "^2.4.1"
+  }
 }
