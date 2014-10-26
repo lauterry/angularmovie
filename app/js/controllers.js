@@ -8,6 +8,8 @@ angularMovieApp.controller("homeController" ,function ($scope) {
 
 angularMovieApp.controller("moviesController" ,function ($scope, Movie) {
 
+	$scope.tri = 'title';
+
     Movie.fetch().success(function(resp){
         $scope.movies = resp;
     });
@@ -20,6 +22,13 @@ angularMovieApp.controller("moviesController" ,function ($scope, Movie) {
             }
         );
     };
+
+	$scope.trier = function (tri) {
+		if ($scope.tri === tri) {
+			$scope.reverse = !$scope.reverse
+		}
+		$scope.tri = tri;
+	}
 
 });
 

@@ -10,8 +10,8 @@
     <input class="span5" type="text" ng-model="search" placeholder="Rechercher">
     <section class="pull-right">
         <button class="btn btn-success" ng-click="tableView = !tableView"><i ng-class="{'icon-th-list icon-white' : tableView == false , 'icon-th icon-white' : tableView == true }"></i></button>
-        <button class="btn btn-info" ng-click="tri = 'releaseYear'; reverse = !reverse">Trier par année</button>
-        <button class="btn btn-info" ng-click="tri = 'title'; reverse = !reverse">Trier par titre</button>
+        <button class="btn btn-info" ng-click="trier('releaseYear')">Trier par année</button>
+        <button class="btn btn-info" ng-click="trier('title')">Trier par titre</button>
     </section>
 </section>
 
