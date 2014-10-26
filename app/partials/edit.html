@@ -1,6 +1,5 @@
 <header class="page-header">
-    <h1>Modification</small>
-    </h1>
+    <h1>Modification</h1>
 </header>
 
 <section>
@@ -27,7 +26,8 @@
         </div>
         <div class="control-group">
             <label class="control-label">Note :</label>
-            <input type="number" placeholder="entre 1 et 5" ng-model="movie.rate">
+            <input type="number" placeholder="entre 1 et 5" ng-model="movie.rate" required min="1" max="5">
+			<div ng-show="movieForm.inputRate.$dirty" ng-messages="movieForm.inputRate.$error" ng-messages-include="partials/validation-messages.html"></div>
         </div>
         <footer class="form-actions">
             <a href="#/movies" class="btn btn-danger btn-small">Annuler</a>

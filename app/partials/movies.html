@@ -32,10 +32,10 @@
     </header>
     <section class="modal-body">
         <form novalidate name="movieForm" class="form-horizontal">
-            <div class="control-group" ng-class="{error : !movieForm.$pristine && movieForm.inputTitle.$error.required}">
+            <div class="control-group" ng-class="{error : movieForm.inputTitle.$dirty && movieForm.inputTitle.$invalid}">
                 <label class="control-label">Titre :</label>
                 <input type="text" name="inputTitle" ng-model="movie.title" required>
-                <span class="help-block" ng-show="!movieForm.$pristine && movieForm.inputTitle.$error.required">Le titre est obligatoire</span>
+                <span class="help-block" ng-show="movieForm.inputTitle.$dirty && movieForm.inputTitle.$error.required">Le titre est obligatoire</span>
             </div>
             <div class="control-group" ng-class="{error : movieForm.inputYear.$error.pattern}">
                 <label class="control-label">Année de sortie :</label>
@@ -55,12 +55,10 @@
                 <input type="text" ng-model="movie.synopsis" name="textareaSynopsis"  ng-maxlength="140">
                 <span class="help-block" ng-show="movieForm.textareaSynopsis.$error.maxlength">140 caractères maximum</span>
             </div>
-            <div class="control-group" ng-class="{error : movieForm.inputRate.$error.min || movieForm.inputRate.$error.max}">
+            <div class="control-group" ng-class="{error : movieForm.inputRate.$dirty && movieForm.inputRate.$invalid}">
                 <label class="control-label">Note :</label>
-                <input type="number" name="inputRate" placeholder="entre 1 et 5" ng-model="movie.rate" min="0" max="5">
-                <span class="help-block" ng-show="movieForm.inputRate.$error.min">La note doit être supérieure à 0</span>
-                <span class="help-block" ng-show="movieForm.inputRate.$error.max">La note doit être inférieure à 5</span>
-
+                <input type="number" name="inputRate" placeholder="entre 1 et 5" ng-model="movie.rate" min="1" max="5" required>
+				<div ng-show="movieForm.inputRate.$dirty" ng-messages="movieForm.inputRate.$error" ng-messages-include="partials/validation-messages.html"></div>
             </div>
         </form>
     </section>
