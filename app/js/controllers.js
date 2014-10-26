@@ -12,9 +12,11 @@ angularMovieApp.controller("moviesController" ,function ($scope, Movie) {
         $scope.movies = resp;
     });
 
-    $scope.deleteMovie = function(index){
-        Movie.remove($scope.movies[index].id)
-            .success(function(resp){
+    $scope.deleteMovie = function(movie){
+		var index = $scope.movies.indexOf(movie);
+
+        Movie.remove(movie.id)
+            .success(function(){
                 $scope.movies.splice(index, 1);
             }
         );

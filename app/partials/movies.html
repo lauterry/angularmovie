@@ -21,7 +21,7 @@
         <img ng-src="{{movie.poster}}" class="span2">
         <div class="caption">
             <h3>{{movie.title | uppercase}}
-                <button class="btn btn-danger" ng-click="deleteMovie($index)"><i class="icon-trash icon-white"></i></button>
+                <button class="btn btn-danger" ng-click="deleteMovie(movie)"><i class="icon-trash icon-white"></i></button>
                 <a class="btn btn-info" href="#/movies/edit/{{movie.id}}"><i class="icon-edit icon-white"></i></a>
             </h3>
             <p><b>Année de sortie : </b>{{movie.releaseYear}}</p>
