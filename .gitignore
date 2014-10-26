@@ -3,3 +3,4 @@
 AngularMovie.iml
 node_modules/
 test/report/
+app/lib
