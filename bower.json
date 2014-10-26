@@ -1,0 +1,29 @@
+{
+  "name": "angularmovie",
+  "version": "1.0.0",
+  "homepage": "https://github.com/Sfeir/angularmovie",
+  "authors": [
+    "LAU Thierry <thierlau@gmail.com>"
+  ],
+  "description": "Gestionnaire de film developpe avec AngularJS",
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-resource": "1.2.0",
+    "angular-route": "1.2.0",
+    "angular": "1.2.0",
+    "bootstrap.css": "2.1.1",
+    "jquery": "1.8.2"
+  }
+}
